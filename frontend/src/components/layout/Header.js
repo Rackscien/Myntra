@@ -25,13 +25,14 @@ const Header = ({ show, setShow }) => {
   return (
     <div
       style={{
-        width:"100vw",
-        position:"fixed",
+        width: "100vw",
+        position: "fixed",
         height: "10vh",
         backgroundColor: "#FB6F90",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        padding: "10px",
       }}
     >
       <div
@@ -60,9 +61,15 @@ const Header = ({ show, setShow }) => {
               marginLeft: "10px",
               fontWeight: "bold",
               cursor: "pointer",
+              fontSize: "18px",
             }}
             onClick={() => {
-              setShow({ men: !(show.men), women: false, kids: false });
+              setShow({
+                men: !show.men,
+                women: false,
+                kids: false,
+                user: false,
+              });
             }}
           >
             MEN
@@ -74,9 +81,15 @@ const Header = ({ show, setShow }) => {
               marginLeft: "10px",
               fontWeight: "bold",
               cursor: "pointer",
+              fontSize: "18px",
             }}
             onClick={() => {
-              setShow({ men: false, women: !show.women, kids: false });
+              setShow({
+                men: false,
+                women: !show.women,
+                kids: false,
+                user: false,
+              });
             }}
           >
             WOMEN
@@ -88,9 +101,15 @@ const Header = ({ show, setShow }) => {
               marginLeft: "10px",
               fontWeight: "bold",
               cursor: "pointer",
+              fontSize: "18px",
             }}
             onClick={() => {
-              setShow({ men: false, women: false, kids: !show.kids });
+              setShow({
+                men: false,
+                women: false,
+                kids: !show.kids,
+                user: false,
+              });
             }}
           >
             KIDS
@@ -113,7 +132,7 @@ const Header = ({ show, setShow }) => {
         <BsSearch style={{ margin: "2px" }} />
         <input
           type="text"
-          placeholder="search items here"
+          placeholder="search products, brands here"
           style={{
             border: "0 solid white",
             height: "4vh",
@@ -123,20 +142,49 @@ const Header = ({ show, setShow }) => {
           }}
         />
       </div>
-      <div style={{ display: "flex" }}>
-        {/* {isNotRegistered ? (
-          <>
-            <Link to="/register">
-              <Button>Register</Button>
-            </Link>
-            <Link to="/login">
-              <Button>Login</Button>
-            </Link>
-          </>
-        ) : (
-          <></>
-        )} */}
-
+      <div style={{ display: "flex", marginRight: "10px" }}>
+       
+       
+          <Link to="/wishList"  style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "0 10px",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              textDecoration:"none",
+              color:"black"
+            }}>
+            <img
+              src={WhishList}
+              style={{ width: "20px", backgroundColor: "", margin: "" }}
+            />
+            <span style={{ fontWeight: "bold", fontSize: "12px" }}>
+              WishList
+            </span>
+          </Link>
+        
+        
+          <Link
+            to="/bag"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "0 10px",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              textDecoration:"none",
+              color:"black"
+            }}
+          >
+            <img
+              src={Bag}
+              style={{ width: "20px", backgroundColor: "", margin: "" }}
+            />
+            <span style={{ fontWeight: "bold", fontSize: "12px" }}>Bag</span>
+          </Link>
+        
         <div
           style={{
             display: "flex",
@@ -146,47 +194,20 @@ const Header = ({ show, setShow }) => {
             justifyContent: "center",
             cursor: "pointer",
           }}
-        >
-          <img
-            src={WhishList}
-            style={{ width: "20px", backgroundColor: "", margin: "" }}
-          />
-          <span style={{ fontWeight: "bold", fontSize: "12px" }}>WishList</span>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            margin: "0 10px",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-          }}
-        >
-          <img
-            src={Bag}
-            style={{ width: "20px", backgroundColor: "", margin: "" }}
-          />
-          <span style={{ fontWeight: "bold", fontSize: "12px" }}>Bag</span>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            margin: "0 10px",
-            alignItems: "center",
-            justifyContent: "center",
+          onClick={() => {
+            setShow({
+              men: false,
+              women: false,
+              kids: false,
+              user: !show.user,
+            });
           }}
         >
           <img
             src={User}
             style={{ width: "20px", backgroundColor: "", margin: "" }}
           />
-          <span
-            style={{ fontWeight: "bold", fontSize: "12px", cursor: "none" }}
-          >
-            Profile
-          </span>
+          <span style={{ fontWeight: "bold", fontSize: "12px" }}>Profile</span>
         </div>
       </div>
     </div>

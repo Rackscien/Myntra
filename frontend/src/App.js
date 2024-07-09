@@ -6,6 +6,8 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import { useState } from 'react';
+import WishList from './components/pages/WishList';
+import Bag from './components/pages/Bag';
 function App() {
   const [user,setUser]=useState({
     email:""
@@ -14,7 +16,8 @@ function App() {
   const [show, setShow] = useState({
     men:false,
     women:false,
-    kids:false
+    kids:false,
+    user:false,
   });
   
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route index element={<Home show={show} setShow={setShow}/>}/>
           <Route path='/login' element={<Login user={user} setUser={setUser}/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/wishlist' element={<WishList/>}/>
+          <Route path='/bag' element={<Bag/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

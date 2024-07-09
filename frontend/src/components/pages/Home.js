@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Men from "./Men";
 import Women from "./Women";
 import Kids from "./Kids";
+import User from "./User";
 
 const Home = ({show,setShow}) => {
     
@@ -15,6 +16,9 @@ const Home = ({show,setShow}) => {
         }
         {
             show.kids && <Kids/>
+        }
+        {
+            show.user && <User/>
         }
       <div
         style={{
