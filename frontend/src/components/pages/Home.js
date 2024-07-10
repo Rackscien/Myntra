@@ -3,6 +3,7 @@ import Men from "./Men";
 import Women from "./Women";
 import Kids from "./Kids";
 import User from "./User";
+import Features from "./Features";
 
 const Home = ({show,setShow}) => {
     
@@ -19,6 +20,9 @@ const Home = ({show,setShow}) => {
         }
         {
             show.user && <User/>
+        }
+        {
+          show.features && <Features  show={show} setShow={setShow}/>
         }
       <div
         style={{

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Kids = () => {
   return (
-    <div style={{position: "fixed", backgroundColor:"white",width:"50vw",left:"10vw", height:"50vh",top:"10vh"}}>Kids</div>
+    <div style={{position: "fixed",width:"15vw",left:"20vw", height:"50vh",top:"11vh",border:"1px solid white", borderRadius:"5px",backgroundColor:"#FB6F90"}}>Kids</div>
   )
 }
 

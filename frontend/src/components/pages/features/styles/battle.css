@@ -1,0 +1,55 @@
+.left{
+    width: 20vw;
+    background-color: white;
+    min-height:80vh ;
+    border-radius: 5px;
+    padding: 10px;
+}
+.right{
+    width: 75vw;
+    background-color: white;
+    height:80vh ;
+    border-radius: 5px;
+}
+.left-inner{
+    text-align: center;
+}
+.addTheme{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: large;
+    text-align: center;
+    background-color: #FB6F90;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.addTheme:hover{
+    background-color: pink;
+}
+.inputTheme{
+    height: 30px;
+    width: 15vw;
+    margin: 5px;
+    border: 1px solid #FB6F90;
+    padding: 5px;
+}
+.right-top{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.right-top button{
+    height: 40px;
+    width: 100px;
+    border: 2px solid #FB6F90;
+    background-color: pink;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.right-top button:hover{
+ background-color: white;
+}

@@ -69,6 +69,7 @@ const Header = ({ show, setShow }) => {
                 women: false,
                 kids: false,
                 user: false,
+                features:false,
               });
             }}
           >
@@ -89,6 +90,7 @@ const Header = ({ show, setShow }) => {
                 women: !show.women,
                 kids: false,
                 user: false,
+                features: false,
               });
             }}
           >
@@ -109,12 +111,35 @@ const Header = ({ show, setShow }) => {
                 women: false,
                 kids: !show.kids,
                 user: false,
+                features:false,
               });
             }}
           >
             KIDS
           </button>
+          <button
+            style={{
+              border: "none",
+              backgroundColor: "#FB6F90",
+              marginLeft: "10px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              fontSize: "18px",
+            }}
+            onClick={() => {
+              setShow({
+                men: false,
+                women: false,
+                kids: false,
+                user: false,
+                features:!show.features,
+              });
+            }}
+          >
+            FEATURES
+          </button>
         </div>
+        
       </div>
       <div
         style={{
@@ -143,48 +168,46 @@ const Header = ({ show, setShow }) => {
         />
       </div>
       <div style={{ display: "flex", marginRight: "10px" }}>
-       
-       
-          <Link to="/wishList"  style={{
-              display: "flex",
-              flexDirection: "column",
-              margin: "0 10px",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              textDecoration:"none",
-              color:"black"
-            }}>
-            <img
-              src={WhishList}
-              style={{ width: "20px", backgroundColor: "", margin: "" }}
-            />
-            <span style={{ fontWeight: "bold", fontSize: "12px" }}>
-              WishList
-            </span>
-          </Link>
-        
-        
-          <Link
-            to="/bag"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              margin: "0 10px",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              textDecoration:"none",
-              color:"black"
-            }}
-          >
-            <img
-              src={Bag}
-              style={{ width: "20px", backgroundColor: "", margin: "" }}
-            />
-            <span style={{ fontWeight: "bold", fontSize: "12px" }}>Bag</span>
-          </Link>
-        
+        <Link
+          to="/wishList"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "0 10px",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <img
+            src={WhishList}
+            style={{ width: "20px", backgroundColor: "", margin: "" }}
+          />
+          <span style={{ fontWeight: "bold", fontSize: "12px" }}>WishList</span>
+        </Link>
+
+        <Link
+          to="/bag"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "0 10px",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <img
+            src={Bag}
+            style={{ width: "20px", backgroundColor: "", margin: "" }}
+          />
+          <span style={{ fontWeight: "bold", fontSize: "12px" }}>Bag</span>
+        </Link>
+
         <div
           style={{
             display: "flex",
@@ -200,6 +223,7 @@ const Header = ({ show, setShow }) => {
               women: false,
               kids: false,
               user: !show.user,
+              features: false,
             });
           }}
         >
