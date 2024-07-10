@@ -27,3 +27,12 @@ module.exports.deleteContent = async (req,res) => {
     .then(()=> res.send("Deleted Successfully...."))
     .catch((err)=> console.log(err))
 }
+
+module.exports.updateVote = async (req,res)=>{
+    const {_id}= req.body;
+    BattleMOdel
+    .findByIdAndUpdate(_id,{$inc:{vote:1}})
+    .then(()=> res.send("Updated Successfully...."))
+    .catch((err)=> console.log(err))
+
+}

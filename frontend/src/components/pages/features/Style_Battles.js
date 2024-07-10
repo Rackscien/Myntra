@@ -8,20 +8,31 @@ import "./styles/battle.css";
 import { getContent } from "../../../utils/BattleUtils";
 import { addThemes, getThemes } from "../../../utils/BattleThemeUtils";
 import BattleForm from "./BattleForm";
+import { styled } from "@mui/material/styles";
+import BattleCards from "./BattleCards";
+import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
+
 const Style_Battles = ({ show, setShow }) => {
+  const [id,setId]=useState("");
   const [themes, setThemes] = useState([]);
-  const [Theme, setTheme] = useState("x1");
+  const [Theme, setTheme] = useState("");
   const [newTheme, setNewTheme] = useState("");
   const [content, setContent] = useState([]);
-  const [battleForm, setBattleForm] = useState(false)
-  useEffect(() => {
-    getContent(Theme, setContent);
-  }, [Theme]);
+  const [battleForm, setBattleForm] = useState(false);
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  // const [theme, setTheme]=useState("")
+  const [vote, setVote] = useState(0);
 
   useEffect(() => {
     getThemes(setThemes);
   }, []);
-  // console.log(themes);
+
+  useEffect(() => {
+    getContent(Theme, setContent);
+  }, [Theme]);
+//  console.log(content)
   return (
     <div
       style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
@@ -85,6 +96,7 @@ const Style_Battles = ({ show, setShow }) => {
                         borderRadius: "5px",
                         paddingLeft: "5px",
                       }}
+                      // value={Theme}
                       key={ind}
                       onClick={(e) => {
                         setTheme(`${val.theme}`);
@@ -119,12 +131,45 @@ const Style_Battles = ({ show, setShow }) => {
           ) : (
             <>
               <div className="right-top">
-                <button onClick={()=>{setBattleForm(!battleForm)}}>UPLOAD</button>
+                <button
+                  onClick={() => {
+                    setBattleForm(!battleForm);
+                  }}
+                >
+                  UPLOAD
+                </button>
               </div>
-              {
-                battleForm && <BattleForm/>
-              }
-              <div className="right-bottom">content</div>
+              {battleForm && (
+                <BattleForm
+                  name={name}
+                  setName={setName}
+                  image={image}
+                  setImage={setImage}
+                  Theme={Theme}
+                  setTheme={setTheme}
+                  vote={vote}
+                  setContent={setContent}
+                  battleForm={battleForm}
+                  setBattleForm={setBattleForm}
+                />
+              )}
+              <div className="right-bottom" >
+                {/* {
+                  content.map((val)=>{
+                    return<h1>{val.name}</h1>
+                  })
+                } */}
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid container spacing={2} style={{padding:"5px"}}>
+                    {content.map((val) => {
+                     return <Grid item onClick={()=>{setId(val._id); console.log(id)}} xs={3}>
+                        <BattleCards val={val} id={id} setId={setId} vote={vote} setVote={setVote} Theme={Theme} setContent={setContent}/>
+                      </Grid>;
+                    })}
+                    
+                  </Grid>
+                </Box>
+              </div>
             </>
           )}
         </div>

@@ -53,3 +53,8 @@
 .right-top button:hover{
  background-color: white;
 }
+
+.right-bottom{
+    overflow-y: scroll;
+    height: 70vh;
+}
