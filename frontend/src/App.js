@@ -14,10 +14,11 @@ import Style_Battles from './components/pages/features/Style_Battles';
 import Style_Diary from './components/pages/features/Style_Diary';
 import Behind_the_scenes from './components/pages/features/Behind_the_scenes';
 import Latest_fashion from './components/pages/features/Latest_fashion';
-import Documentaries from './components/pages/features/Documentaries';
+
 
 import styled from 'styled-components'
 import Style_quiz from './components/pages/features/quiz/Style_quiz';
+import Documentaries from './components/pages/features/Documentaries/Documentaries';
 
 
 function App() {
