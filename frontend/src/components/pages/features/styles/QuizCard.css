@@ -1,0 +1,55 @@
+.battleCard{
+    width: 75vw;
+    background-color: white;
+    border: 1px solid pink;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.battleCardTop{
+    margin-bottom: 10px;
+    width: 73vw;
+}
+.battleCardTop h3{
+    font-size: 25px;
+    width: 73vw;
+}
+.battleCardBottom{
+    margin-top: 5px;
+}
+.battleCardBottom .p1{
+    width: 73vw;
+    background-color: white;
+    border: 1px solid pink;
+    margin: 2px;
+    height: 30px;
+    text-align: start;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+}
+.battleCardBottom .p1:hover{
+    background-color: pink;
+    cursor: pointer;
+}
+.battleCard button{
+    width: 8vw;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid pink ;
+    background-color: white;
+    border-radius: 5px;
+    /* margin-bottom: 0; */
+}
+.battleCard button:hover{
+    cursor: pointer;
+    background-color: #FB6F90;
+}
+.checked{
+    background-color: pink;
+}

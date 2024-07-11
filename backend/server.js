@@ -6,6 +6,9 @@ const app = express();
 
 const BattleRoutes= require('./routes/battleRoutes')
 const BattleTheme = require('./routes/battleThemeRoutes')
+const Quiz = require("./routes/QuizRoutes.js")
+
+
 app.use(express.json({limit:'25mb'}));
 app.use(express.urlencoded({limit:'25mp'}))
 app.use(cors());
@@ -15,6 +18,8 @@ app.use(cors());
 // });
 app.use('/battle',BattleRoutes)
 app.use('/battleTheme',BattleTheme);
+app.use('/quiz',Quiz)
+
 const PORT = process.env.port || 200;
 mongoose
   .connect(process.env.MONGODB_URL)

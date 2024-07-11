@@ -1,6 +1,7 @@
 import React from "react";
 import Vote from "../../../assets/Vote.png";
 import { addVote } from "../../../utils/BattleUtils";
+
 const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
     vote=val.vote;
   return (
@@ -10,7 +11,7 @@ const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        border: "2px solid black",
+        border: "1px solid #FB6F90",
         backgroundColor: "pink",
         paddingTop: "",
       }}

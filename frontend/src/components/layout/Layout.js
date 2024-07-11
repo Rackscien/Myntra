@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const Layout = ({show,setShow}) => {
   
   return (
-    <div style={{ backgroundColor: "gray" }}>
+    <div style={{ backgroundColor: "white" }}>
       <Header show={show} setShow={setShow}/>
       <Outlet />
       <Footer />
