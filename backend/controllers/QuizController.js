@@ -23,9 +23,9 @@ module.exports.check= async(req,res)=>{
     const solution = req.params.solution;
     const quiz = await QuizModal.findById(id);
     if(quiz.answer===solution){
-        res.json({success:true})
+        res.send("true")
     }
     else(
-        res.json({success:false})
+        res.send("false")
     )
 }

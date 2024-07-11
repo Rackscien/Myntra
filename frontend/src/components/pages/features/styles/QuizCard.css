@@ -23,7 +23,6 @@
 }
 .battleCardBottom .p1{
     width: 73vw;
-    background-color: white;
     border: 1px solid pink;
     margin: 2px;
     height: 30px;
@@ -31,7 +30,6 @@
     padding: 10px;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    
 }
 .battleCardBottom .p1:hover{
     background-color: pink;
@@ -42,7 +40,6 @@
     height: 30px;
     margin: 10px;
     border: 2px solid pink ;
-    background-color: white;
     border-radius: 5px;
     /* margin-bottom: 0; */
 }
@@ -52,4 +49,12 @@
 }
 .checked{
     background-color: pink;
+    width: 73vw;
+    border: 1px solid pink;
+    margin: 2px;
+    height: 30px;
+    text-align: start;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

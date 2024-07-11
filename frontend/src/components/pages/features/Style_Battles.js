@@ -24,7 +24,6 @@ const Style_Battles = ({ show, setShow }) => {
   const [image, setImage] = useState("");
   // const [theme, setTheme]=useState("")
   const [vote, setVote] = useState(0);
-
   useEffect(() => {
     getThemes(setThemes);
   }, []);

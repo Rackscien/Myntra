@@ -38,9 +38,9 @@ const Features = ({show, setShow}) => {
         width: "15vw",
         left: "25vw",
         height: "40vh",
-        backgroundColor: "white",
         border: "3px solid #FB6F90",
         borderRadius: "5px",
+        zIndex: "100",
       }}
     >
       <ul

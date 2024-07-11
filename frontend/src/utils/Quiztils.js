@@ -24,10 +24,11 @@ const addQuiz = ()=>{
 const checkquiz=(id,answer,setAnswer,setStatus)=>{
     console.log(id);
     console.log(answer);
-    axios.get(`${BaseUrl}/${id}/${answer}`)
+    const url = `${BaseUrl}/check/${id}/${answer}`;
+    axios.get(url)
     .then(({data})=>{
-        console.log('Quiz data--->',data)
-        setStatus({data});
+        console.log('answer --->',data)
+        setStatus(data);
         setAnswer("")
     })
 }

@@ -13,6 +13,7 @@ const Style_quiz = ({ show, setShow }) => {
   
   useEffect(()=>{
     getQuiz(setAllQuiz);
+    console.log('all quiz--->',allquiz);
   },[])
   return (
     <div
