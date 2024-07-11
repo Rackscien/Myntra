@@ -7,6 +7,8 @@ const app = express();
 const BattleRoutes= require('./routes/battleRoutes')
 const BattleTheme = require('./routes/battleThemeRoutes')
 const Quiz = require("./routes/QuizRoutes.js")
+const Documentary = require('./routes/DocumentaryRoute.js')
+const Data = require('./routes/AllDataRoutes.js')
 
 
 app.use(express.json({limit:'25mb'}));
@@ -19,6 +21,8 @@ app.use(cors());
 app.use('/battle',BattleRoutes)
 app.use('/battleTheme',BattleTheme);
 app.use('/quiz',Quiz)
+app.use('/documentary',Documentary)
+app.use('/data',Data)
 
 const PORT = process.env.port || 200;
 mongoose
