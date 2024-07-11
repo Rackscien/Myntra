@@ -83,12 +83,12 @@ const Features = ({show, setShow}) => {
           </Link>
         </li>
         <li style={x1}>
-          <Link to="/fashion" style={x} onClick={remove}>
+          <Link to="/documentaries" style={x} onClick={remove}>
             Fashion Documentaries
           </Link>
         </li>
         <li style={x1}>
-          <Link to="/documentaries" style={x} onClick={remove}>
+          <Link to="/fashion" style={x} onClick={remove}>
             Latest Fashion
           </Link>
         </li>
