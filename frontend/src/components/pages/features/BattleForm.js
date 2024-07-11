@@ -77,8 +77,8 @@ const BattleForm = ({name, setName,image, setImage, Theme, setTheme,vote,setCont
               onChange={(e) => handleFileUpload(e)}
             />
           </div>
-          <div style={{ width: "15vw", margin: "10px" }}>
-            <img src={image} style={{ width: "13vw" }} />
+          <div style={{ width: "15vw", margin: "10px", display:"flex", alignItems:"center", justifyContent:"center", border:"1px solid black", height:"35vh" , backgroundColor:"white"}}>
+            <img src={image} style={{ width: "13vw", height:"30vh" }} />
           </div>
         </div>
         <button type="submit" style={{width:"10vw", height:"30px", backgroundColor:"#FB6F90", cursor:"pointer"}} onClick={()=>{addContent(name,setName, image,setImage,Theme,vote,setContent); setBattleForm(!battleForm);}}>Submit</button>

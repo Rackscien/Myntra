@@ -25,8 +25,10 @@ const Header = ({ show, setShow }) => {
   return (
     <div
       style={{
+        position: "sticky",
+        top:"0",
         width: "100vw",
-        position: "fixed",
+        
         height: "10vh",
         backgroundColor: "#FB6F90",
         display: "flex",
@@ -44,14 +46,23 @@ const Header = ({ show, setShow }) => {
         }}
       >
         <img src={Myntra} style={{ width: "10vh" }} />
-        <h2 style={{ color: "white" }}>MYNTRA</h2>
+        <Link to="/" style={{textDecoration:"none"}} onClick={() => {
+              setShow({
+                men: false,
+                women: false,
+                kids: false,
+                user: false,
+                features:false,
+              });
+            }}><h2 style={{ color: "white" }} >MYNTRA</h2></Link>
 
         <div
           style={{
             display: "flex",
-            alignItems: "center",
+            height:"100%",
+            // alignItems: "center",
             justifyContent: "center",
-            margin: "10px",
+            // margin: "10px",
           }}
         >
           <button
@@ -73,7 +84,7 @@ const Header = ({ show, setShow }) => {
               });
             }}
           >
-            MEN
+           <Link to="/men" style={{textDecoration:"none", color:"black"}}> MEN</Link>
           </button>
           <button
             style={{
@@ -94,7 +105,7 @@ const Header = ({ show, setShow }) => {
               });
             }}
           >
-            WOMEN
+           <Link to="/women" style={{textDecoration:"none", color:"black"}}> WOMEN</Link>
           </button>
           <button
             style={{
@@ -115,7 +126,7 @@ const Header = ({ show, setShow }) => {
               });
             }}
           >
-            KIDS
+           <Link to="/kids" style={{textDecoration:"none", color:"black"}}> KIDS</Link>
           </button>
           <button
             style={{

@@ -10,9 +10,6 @@ const Latest_fashion = ({ show, setShow }) => {
         <div
           style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
         >
-          {show.men && <Men />}
-          {show.women && <Women />}
-          {show.kids && <Kids />}
           {show.user && <User />}
           {show.features && <Features />}
           <div

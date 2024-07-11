@@ -1,14 +1,14 @@
 .left{
     width: 20vw;
     background-color: white;
-    min-height:80vh ;
+    height:85vh ;
     border-radius: 5px;
     padding: 10px;
 }
 .right{
-    width: 75vw;
+    width: 77vw;
     background-color: white;
-    height:80vh ;
+    height:85vh ;
     border-radius: 5px;
 }
 .left-inner{

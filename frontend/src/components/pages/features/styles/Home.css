@@ -1,0 +1,130 @@
+/* .hackName{
+    position: relative;
+    font-size: 5em;
+    letter-spacing: 7px;
+    color: black;
+    text-transform: uppercase;
+    width: 80%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+    line-height:0.70em;
+    outline: none;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%, 18%, 20%, 50.1%,60%,65.1%,80%,90.1%,92%{
+        color:#FB6F90;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%,80.1%,90%,92.1%, 100%{
+        color: #fff;
+        text-shadow: 0 0 10px #FB6F90,
+        0 0 20px #FB6F90,
+        0 0 40px #FB6F90,
+        0 0 80px #FB6F90,
+        0 0 1600px #FB6F90;
+        
+    }
+} */
+
+.hackName{
+    /* position: absolute; */
+    font-size: 10vh;
+    color: pink;
+    -webkit-text-stroke: 0.2vw gray;
+}
+
+/* .hackName::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: green;
+    overflow: hidden;
+    -webkit-text-stroke: 0vw pink;
+    border-right: 2px solid green;
+    
+    animation: animate 6s linear infinite ;
+} */
+/* @keyframes animate {
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%, 90%{
+        width: 100%;
+    }
+} */
+
+.slide-main{
+    margin-top: 5px;
+    background-color: white;
+    display: grid;
+    height: 40vh;
+    place-items: center;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    /* position: relative; */
+    border: 1px solid white;
+}
+.slider{
+    height: 38vh;
+    position: relative;
+    width: 90%;
+    place-items: center;
+    overflow: hidden;
+    margin: auto;
+  
+    
+}
+.slide-track{
+    display: flex;
+    width: calc(250px*14);
+    animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*7));
+    }
+    
+}
+.slide{
+    height: 37vh;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+.slide img{
+    width: 90%;
+    height: 100%;
+    transition: transform 1s;
+}
+.slide img:hover{
+    transform: translateZ(20px);
+}
+.slider::before,
+.slider::after{
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+.slider::before{
+    left: 0;
+    top: 0;
+}
+.slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}

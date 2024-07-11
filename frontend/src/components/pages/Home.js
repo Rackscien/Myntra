@@ -4,93 +4,187 @@ import Women from "./Women";
 import Kids from "./Kids";
 import User from "./User";
 import Features from "./Features";
+import "./features/styles/Home.css";
 
-const Home = ({show,setShow}) => {
-    
+import img2 from "../../assets/clothes/2.jpeg";
+import img3 from "../../assets/clothes/3.jpeg";
+import img4 from "../../assets/clothes/4.jpg";
+
+import img6 from "../../assets/clothes/6.jpg";
+import img7 from "../../assets/clothes/7.jpg";
+import img8 from "../../assets/clothes/8.jpg";
+
+import men1 from "../../assets/mens/1.jpg"
+import men2 from "../../assets/mens/2.jpg"
+import men3 from "../../assets/mens/3.jpeg"
+import men4 from "../../assets/mens/4.jpg"
+import men5 from "../../assets/mens/5.jpg"
+
+import kid1 from "../../assets/kids/1.jpg"
+import kid2 from "../../assets/kids/2.jpg"
+import kid3 from "../../assets/kids/3.jpg"
+import kid4 from "../../assets/kids/4.jpeg"
+import kid5 from "../../assets/kids/5.jpeg"
+const Home = ({ show, setShow }) => {
   return (
-    <div style={{ minHeight: "90vh", backgroundColor: "white",padding: "6px", }}>
-        {
-            show.men && <Men/>
-        }
-        {
-            show.women && <Women/>
-        }
-        {
-            show.kids && <Kids/>
-        }
-        {
-            show.user && <User/>
-        }
-        {
-          show.features && <Features  show={show} setShow={setShow}/>
-        }
+    <div
+      style={{ minHeight: "90vh", backgroundColor: "pink", padding: "6px",position:"",top:"" }}
+    >
+      {show.user && <User />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div
         style={{
-            marginTop:"10vh",
+          // position: "relat",
+          marginTop: "0",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-          height: "40vh",
-          backgroundColor: "pink",
+          height: "15vh",
+          backgroundColor: "white",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "5px",
-          
+          // overflow:"hidden"
         }}
       >
-        <h1 style={{ fontSize: "8vh" }}>HackerRamp</h1>
-        <h2>WeForShe</h2>
-        <h3 style={{color:"gray"}}>Myntra</h3>
+        <h1 className="hackName">HackerRamp</h1>
+        {/* <div style={{ display:"flex", justifyContent:"space-around", alignItems:"center"}}>
+        <h2 style={{margin:"5px"}}>WeForShe</h2>
+        <h3 style={{color:"gray",margin:"5px"}}>(Myntra)</h3>
+        </div> */}
       </div>
-      <div 
+      <div
         style={{
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           height: "40vh",
-          backgroundColor: "pink",
+          backgroundColor: "white",
           display: "flex",
-          flexDirection: "column",
+          // flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-evenly",
           borderRadius: "5px",
-          margin:"5px 0"
-          
-        }}>
-            Women latest style images
+          margin: "5px 0",
+        }}
+      >
+        <div>
+          <img src={kid1} style={{width:"200px", height:"35vh"}}/>
+        </div>
+        <div>
+          <img src={kid2} style={{width:"200px", height:"35vh"}}/>
+        </div>
+        <div>
+          <img src={kid3} style={{width:"200px", height:"35vh"}}/>
+        </div>
+        <div>
+          <img src={kid4} style={{width:"200px", height:"35vh"}}/>
+        </div>
+        <div>
+          <img src={kid5} style={{width:"200px", height:"35vh"}}/>
+        </div>
+        <div>
+          <img src={kid1} style={{width:"200px", height:"35vh"}}/>
+        </div>
       </div>
-      <div 
-        style={{
-          boxShadow:
-            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-          height: "40vh",
-          backgroundColor: "pink",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "5px",
-           margin:"5px 0"
-          
-        }}>
-            Men Style images
+      <div className="slide-main">
+        <div className="slider">
+          <div className="slide-track">
+            <div className="slide">
+              <img src={img2} />
+            </div>
+            <div className="slide">
+              <img src={img3} />
+            </div>
+            <div className="slide">
+              <img src={img2} />
+            </div>
+            <div className="slide">
+              <img src={img4} />
+            </div>
+            <div className="slide">
+              <img src={img6} />
+            </div>
+            <div className="slide">
+              <img src={img7} />
+            </div>
+            <div className="slide">
+              <img src={img8} />
+            </div>
+            <div className="slide">
+              <img src={img2} />
+            </div>
+            <div className="slide">
+              <img src={img3} />
+            </div>
+            <div className="slide">
+              <img src={img2} />
+            </div>
+            <div className="slide">
+              <img src={img4} />
+            </div>
+            <div className="slide">
+              <img src={img6} />
+            </div>
+            <div className="slide">
+              <img src={img7} />
+            </div>
+            <div className="slide">
+              <img src={img8} />
+            </div>
+          </div>
+        </div>
       </div>
-      <div 
-        style={{
-          boxShadow:
-            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-          height: "40vh",
-          backgroundColor: "pink",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "5px",
-           margin:"5px 0"
-          
-        }}>
-            Kids style image
+
+      <div className="slide-main">
+        <div className="slider">
+          <div className="slide-track">
+            <div className="slide">
+              <img src={men1} />
+            </div>
+            <div className="slide">
+              <img src={men2} />
+            </div>
+            <div className="slide">
+              <img src={men3} />
+            </div>
+            <div className="slide">
+              <img src={men4} />
+            </div>
+            <div className="slide">
+              <img src={men5} />
+            </div>
+            <div className="slide">
+              <img src={men1} />
+            </div>
+            <div className="slide">
+              <img src={men2} />
+            </div>
+            <div className="slide">
+              <img src={men3} />
+            </div>
+            <div className="slide">
+              <img src={men4} />
+            </div>
+            <div className="slide">
+              <img src={men5} />
+            </div>
+            <div className="slide">
+              <img src={men1} />
+            </div>
+            <div className="slide">
+              <img src={men2} />
+            </div>
+            <div className="slide">
+              <img src={men3} />
+            </div>
+            <div className="slide">
+              <img src={men4} />
+            </div>
+          </div>
+        </div>
       </div>
+      
     </div>
   );
 };

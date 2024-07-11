@@ -11,11 +11,11 @@ const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
         alignItems: "center",
         justifyContent: "center",
         border: "2px solid black",
-        backgroundColor: "white",
-        paddingTop: "10px",
+        backgroundColor: "pink",
+        paddingTop: "",
       }}
     >
-      <img src={val.image} style={{ width: "15vw", height: "15vw",border:"1px solid black" }} />
+      <img src={val.image} style={{ width: "100%", height: "40vh",border:"1px solid black" }} />
       <div
         style={{
           display: "flex",
@@ -24,7 +24,7 @@ const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
           alignItems: "center",
         }}
       >
-        <h2>{val.name}</h2>
+        <h4>{val.name}</h4>
         <div
           style={{
             display: "flex",

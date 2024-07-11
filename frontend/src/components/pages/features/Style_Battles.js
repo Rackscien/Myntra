@@ -35,25 +35,23 @@ const Style_Battles = ({ show, setShow }) => {
 //  console.log(content)
   return (
     <div
-      style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
+      style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.men && <Men />}
-      {show.women && <Women />}
-      {show.kids && <Kids />}
       {show.user && <User />}
       {show.features && <Features />}
       <div
         style={{
-          marginTop: "10vh",
+          marginTop: "0vh",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-          minHeight: "90vh",
+          Height: "80vh",
           backgroundColor: "pink",
           display: "flex",
           //   flexDirection: "column",
           alignItems: "center",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
           borderRadius: "5px",
+          padding:"5px"
         }}
       >
         <div className="left">
@@ -95,6 +93,7 @@ const Style_Battles = ({ show, setShow }) => {
                         height: "29px",
                         borderRadius: "5px",
                         paddingLeft: "5px",
+                        cursor:"pointer"
                       }}
                       // value={Theme}
                       key={ind}
