@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Men from "./Men";
 import Women from "./Women";
 import Kids from "./Kids";
 import User from "./User";
 import Features from "./Features";
 import "./features/styles/Home.css";
-
+import { getData } from "../../utils/AlldataUtils";
 import img2 from "../../assets/clothes/2.jpeg";
 import img3 from "../../assets/clothes/3.jpeg";
 import img4 from "../../assets/clothes/4.jpg";
@@ -26,6 +26,11 @@ import kid3 from "../../assets/kids/3.jpg"
 import kid4 from "../../assets/kids/4.jpeg"
 import kid5 from "../../assets/kids/5.jpeg"
 const Home = ({ show, setShow }) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData(setData);
+  }, []);
+  console.log("data-->", data); 
   return (
     <div
       style={{ minHeight: "90vh", backgroundColor: "pink", padding: "6px",position:"",top:"" }}
@@ -184,7 +189,21 @@ const Home = ({ show, setShow }) => {
           </div>
         </div>
       </div>
-      
+      {
+        data.map((val)=>{
+          return (
+            <>
+              <img src={val.img0} alt="clothes"/>
+              <img src={val.img1} alt="clothes"/>
+              <img src={val.img2} alt="clothes"/>
+              <img src={val.img3} alt="clothes"/>
+              <img src={val.img4} alt="clothes"/>
+              <img src={val.img5} alt="clothes"/>
+              <img src={val.img6} alt="clothes"/>
+            </>
+          )
+        })
+      }
     </div>
   );
 };
