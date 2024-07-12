@@ -23,7 +23,7 @@ const addContent = (name,setName,image,setImage,Theme,vote,setContent)=>{
 
 const addVote=(_id,vote,Theme,setContent)=>{
     axios
-    .post(`${BaseUrl}/updateVote`,{_id})
+    .post(`${BaseUrl}/updateVote/${_id}`,{vote})
     .then((data)=>{
         console.log(data);
         // setVote(0);

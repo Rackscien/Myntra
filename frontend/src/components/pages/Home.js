@@ -69,68 +69,68 @@ const Home = ({ show, setShow }) => {
         }}
       >
         <div>
-          <img src={kid1} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid1} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
         <div>
-          <img src={kid2} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid2} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
         <div>
-          <img src={kid3} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid3} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
         <div>
-          <img src={kid4} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid4} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
         <div>
-          <img src={kid5} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid5} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
         <div>
-          <img src={kid1} style={{width:"200px", height:"35vh"}}/>
+          <img src={kid1} style={{width:"200px", height:"35vh"}} alt="kid"/>
         </div>
       </div>
       <div className="slide-main">
         <div className="slider">
           <div className="slide-track">
             <div className="slide">
-              <img src={img2} />
+              <img src={img2} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img3} />
+              <img src={img3} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img2} />
+              <img src={img2} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img4} />
+              <img src={img4} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img6} />
+              <img src={img6} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img7} />
+              <img src={img7} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img8} />
+              <img src={img8} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img2} />
+              <img src={img2} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img3} />
+              <img src={img3} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img2} />
+              <img src={img2} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img4} />
+              <img src={img4} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img6} />
+              <img src={img6} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img7} />
+              <img src={img7} alt="women"/>
             </div>
             <div className="slide">
-              <img src={img8} />
+              <img src={img8} alt="women"/>
             </div>
           </div>
         </div>
@@ -140,46 +140,46 @@ const Home = ({ show, setShow }) => {
         <div className="slider">
           <div className="slide-track">
             <div className="slide">
-              <img src={men1} />
+              <img src={men1} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men2} />
+              <img src={men2} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men3} />
+              <img src={men3} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men4} />
+              <img src={men4} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men5} />
+              <img src={men5} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men1} />
+              <img src={men1} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men2} />
+              <img src={men2} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men3} />
+              <img src={men3} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men4} />
+              <img src={men4} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men5} />
+              <img src={men5} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men1} />
+              <img src={men1} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men2} />
+              <img src={men2} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men3} />
+              <img src={men3} alt="men"/>
             </div>
             <div className="slide">
-              <img src={men4} />
+              <img src={men4} alt="men"/>
             </div>
           </div>
         </div>

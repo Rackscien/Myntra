@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Myntra from "../../assets/Myntra-Logo.png";
@@ -19,22 +20,23 @@ const Button = styled.button`
   border: none;
 `;
 const Header = ({ show, setShow }) => {
-  const [isNotRegistered, setIsNotRegistered] = useState(true);
-  const [isLogin, setIsLogin] = useState(false);
-
+  const { isAuthenticated, user} = useAuth0();
+  if(isAuthenticated){
+    User = user.picture
+  }
   return (
     <div
       style={{
         position: "sticky",
         top: "0",
         width: "99vw",
-
         height: "10vh",
         backgroundColor: "#FB6F90",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "10px",
+        zIndex: "100",
       }}
     >
       <div
@@ -45,7 +47,7 @@ const Header = ({ show, setShow }) => {
           justifyContent: "center",
         }}
       >
-        <img src={Myntra} style={{ width: "10vh" }} />
+        <img src={Myntra} style={{ width: "10vh" }} alt="Myntra"/>
         <Link
           to="/"
           style={{ textDecoration: "none" }}
@@ -212,6 +214,7 @@ const Header = ({ show, setShow }) => {
           <img
             src={WhishList}
             style={{ width: "20px", backgroundColor: "", margin: "" }}
+            alt="wishList"
           />
           <span style={{ fontWeight: "bold", fontSize: "12px" }}>WishList</span>
         </Link>
@@ -232,6 +235,7 @@ const Header = ({ show, setShow }) => {
           <img
             src={Bag}
             style={{ width: "20px", backgroundColor: "", margin: "" }}
+            alt="bag"
           />
           <span style={{ fontWeight: "bold", fontSize: "12px" }}>Bag</span>
         </Link>
@@ -258,6 +262,7 @@ const Header = ({ show, setShow }) => {
           <img
             src={User}
             style={{ width: "20px", backgroundColor: "", margin: "" }}
+            alt="user"
           />
           <span style={{ fontWeight: "bold", fontSize: "12px" }}>Profile</span>
         </div>
