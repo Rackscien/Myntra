@@ -7,6 +7,7 @@ import WhishList from "../../assets/WhishList.png";
 import Bag from "../../assets/shopping-bag.jpg";
 import User from "../../assets/user.jpg";
 import { BsSearch } from "react-icons/bs";
+import { getAnyData } from "../../utils/AlldataUtils";
 const Button = styled.button`
   width: 8vw;
   background-color: pink;
@@ -19,11 +20,12 @@ const Button = styled.button`
   color: black;
   border: none;
 `;
-const Header = ({ show, setShow }) => {
-  const { isAuthenticated, user} = useAuth0();
-  if(isAuthenticated){
-    User = user.picture
+const Header = ({ show, setShow,setSearchContent, setSearchData }) => {
+  const { isAuthenticated, user } = useAuth0();
+  if (isAuthenticated) {
+    User = user.picture;
   }
+  const [input,setInput]= useState("")
   return (
     <div
       style={{
@@ -47,15 +49,12 @@ const Header = ({ show, setShow }) => {
           justifyContent: "center",
         }}
       >
-        <img src={Myntra} style={{ width: "10vh" }} alt="Myntra"/>
+        <img src={Myntra} style={{ width: "10vh" }} alt="Myntra" />
         <Link
           to="/"
           style={{ textDecoration: "none" }}
           onClick={() => {
             setShow({
-              men: false,
-              women: false,
-              kids: false,
               user: false,
               features: false,
             });
@@ -84,9 +83,6 @@ const Header = ({ show, setShow }) => {
             }}
             onClick={() => {
               setShow({
-                men: !show.men,
-                women: false,
-                kids: false,
                 user: false,
                 features: false,
               });
@@ -108,9 +104,6 @@ const Header = ({ show, setShow }) => {
             }}
             onClick={() => {
               setShow({
-                men: false,
-                women: !show.women,
-                kids: false,
                 user: false,
                 features: false,
               });
@@ -124,6 +117,7 @@ const Header = ({ show, setShow }) => {
               WOMEN
             </Link>
           </button>
+
           <button
             style={{
               border: "none",
@@ -135,33 +129,6 @@ const Header = ({ show, setShow }) => {
             }}
             onClick={() => {
               setShow({
-                men: false,
-                women: false,
-                kids: !show.kids,
-                user: false,
-                features: false,
-              });
-            }}
-          >
-            <Link to="/kids" style={{ textDecoration: "none", color: "black" }}>
-              {" "}
-              KIDS
-            </Link>
-          </button>
-          <button
-            style={{
-              border: "none",
-              backgroundColor: "#FB6F90",
-              marginLeft: "10px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              fontSize: "18px",
-            }}
-            onClick={() => {
-              setShow({
-                men: false,
-                women: false,
-                kids: false,
                 user: false,
                 features: !show.features,
               });
@@ -181,25 +148,41 @@ const Header = ({ show, setShow }) => {
           // padding: "5px",
           display: "flex",
           alignItems: "center",
-          // justifyContent:"center"
+          justifyContent:"space-between",
+          padding:"5px"
         }}
+        onClick={()=>{setShow({
+          user: false,
+          features: false,
+        });}}
       >
-        <BsSearch style={{ margin: "2px" }} />
+        {/*  */}
         <input
           type="text"
           placeholder="search products, brands here"
           style={{
             border: "0 solid white",
             height: "4vh",
-            width: "15vw",
-            marginLeft: "4px",
+            width: "17vw",
+            // marginLeft: "4px",
+            paddingLeft:"5px",
+            textTransform:"capitalize"
             // textAlign:"center"
           }}
+          value={input}
+          onChange={(e)=>{setInput(e.target.value); console.log(input)}}
         />
+        <Link to="/search"><button className="searchButton" onClick={()=>{getAnyData(input,setSearchData,setInput)}}><BsSearch style={{ margin: "2px" }} /></button></Link>
       </div>
       <div style={{ display: "flex", marginRight: "10px" }}>
         <Link
           to="/wishList"
+          onClick={() => {
+            setShow({
+              user: false,
+              features: false,
+            });
+          }}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -230,6 +213,12 @@ const Header = ({ show, setShow }) => {
             cursor: "pointer",
             textDecoration: "none",
             color: "black",
+          }}
+          onClick={() => {
+            setShow({
+              user: false,
+              features: false,
+            });
           }}
         >
           <img

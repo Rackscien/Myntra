@@ -3,7 +3,7 @@ const BaseUrl="http://localhost:200/battle"
 
 const getContent=(Theme,setContent)=>{
     console.log(`theme ${Theme}`);
-    axios.get(`${BaseUrl}/${Theme}`)
+    axios.get(`${BaseUrl}/`,{theme:Theme})
     .then(({data})=>{
         console.log('Theme data--->',data)
         setContent(data);
@@ -20,10 +20,11 @@ const addContent = (name,setName,image,setImage,Theme,vote,setContent)=>{
         getContent(Theme, setContent);
     })
 }
-
-const addVote=(_id,vote,Theme,setContent)=>{
+ 
+const addVote=(id,Theme,setContent)=>{
+    // console.log(`${vote}`)
     axios
-    .post(`${BaseUrl}/updateVote/${_id}`,{vote})
+    .post(`${BaseUrl}/updateVote/${id}`)
     .then((data)=>{
         console.log(data);
         // setVote(0);

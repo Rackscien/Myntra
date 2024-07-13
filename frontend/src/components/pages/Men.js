@@ -1,11 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import User from "./User";
+import Features from "./Features";
+import "./features/styles/Men.css";
+import { getMenData } from "../../utils/AlldataUtils";
+import { Box, Grid } from "@mui/material";
+import MenCard from "./Cards/MenCard";
 
-function Men() {
+function Men({ show,setShow,wishListData,setWishListData, CartData,setCartData }) {
+  
+  const [MenData, setMenData] = useState([]);
+  const gender = "Men";
+  useEffect(() => {
+    getMenData(gender, setMenData);
+  }, []);
   return (
-    <div style={{position: "fixed", top:"11vh",width:"15vw",left:"10vw", height:"50vh",border:"1px solid white", borderRadius:"5px",backgroundColor:"#FB6F90"}}>
-        <img src='https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1996801/2018/8/3/15c9e328-62bd-49ea-8cbd-7bc2047ba02f1533279315890-Roadster-Men-Black-Solid-Polo-Collar-T-shirt-836153327931345-1.jpg'/>
+    <div
+      style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
+    >
+      {show.user && <User />}
+      {show.features && <Features />}
+      <div className="men">
+        <div style={{backgroundColor:"white", overflowY:"scroll",position:""}}>
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2} style={{ padding: "5px",  }}>
+              {MenData.map((val) => {
+                return (
+                  <Grid item xs={2}>
+                    <MenCard val={val} setWishListData={setWishListData} setCartData={setCartData}/>
+                    {/*  */}
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Box>
+        
+        </div>
+
+       
+      </div>
     </div>
-  )
+  );
 }
 
-export default Men
+export default Men;

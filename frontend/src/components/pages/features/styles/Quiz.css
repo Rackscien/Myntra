@@ -1,6 +1,6 @@
 .quizMain {
   box-shadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px";
-  height: 85.5vh;
+  height: 86.5vh;
   background-color: pink;
   display: flex;
   align-items: center;
@@ -10,13 +10,14 @@
 }
 .quizleft {
   background-color: white;
-  height: 84vh;
+  height: 85vh;
   width: 20vw;
   border-radius: 5px;
+  padding: 5px;
 }
 .quizRight {
   background-color: white;
-  height: 84vh;
+  height: 85vh;
   width: 77vw;
   border-radius: 5px;
   display: flex;
@@ -24,4 +25,54 @@
   align-items: center;
   /* justify-content: center; */
   padding: 10px;
+}
+.question p{
+  font-size: 25px;
+  font-weight: 600;
+  margin: 5px;
+}
+.question textarea{
+  padding: 5px;
+  font-size: 18px;
+  width: 18vw;
+  border: 1px solid #FB6F90;
+  margin: 5px;
+}
+.options p{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+}
+.options input{
+  padding: 5px;
+  font-size: 16px;
+  width: 18vw;
+  border: 1px solid #FB6F90;
+  margin: 5px;
+}
+.answer p{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+}
+.answer input{
+  padding: 5px;
+  font-size: 15px;
+  width: 18vw;
+  border: 1px solid #FB6F90;
+  margin: 5px;
+}
+.AddQuestion button{
+  width: 6vw;
+  height: 30px;
+  border: 2px solid #FB6F90;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.AddQuestion button:hover{
+cursor: pointer;
+background-color: #FB6F90;
+font-weight: 600;
+border-radius: 4px;
 }

@@ -10,15 +10,19 @@ const getQuiz=(setAllQuiz)=>{
     })
 }
 
-const addQuiz = ()=>{
-    // axios
-    // .post(`${BaseUrl}/save`,{image,name,theme:Theme,vote})
-    // .then((data)=>{
-    //     console.log(data);
-    //     setName("")
-    //     setImage("");
-    //     getContent(Theme, setContent);
-    // })
+const addQuiz = (question,setQuestion,option1,setOption1,option2,setOption2,option3,setOption3,option4,setOption4,answer,setAnswer, setAllQuiz)=>{
+    axios
+    .post(`${BaseUrl}/save`,{question,option1,option2,option3,option4,answer})
+    .then((data)=>{
+        console.log(data);
+        setQuestion("")
+        setOption1("");
+        setOption2("");
+        setOption3("");
+        setOption4("");
+        setAnswer("");
+        getQuiz(setAllQuiz);
+    })
 }
 
 const checkquiz=(id,answer,setAnswer,setStatus)=>{

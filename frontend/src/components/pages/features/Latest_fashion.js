@@ -1,11 +1,9 @@
 import React from 'react'
-import Men from "../Men";
-import Women from "../Women";
-import Kids from "../Kids";
+
 import User from "../User";
 import Features from "../Features";
 
-const Latest_fashion = ({ show, setShow }) => {
+const Latest_fashion = ({ show,  }) => {
     return (
         <div
           style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}

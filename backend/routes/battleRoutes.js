@@ -3,7 +3,7 @@ const { getContent, deleteContent, saveContent, updateVote, getContentId } = req
 const router = Router();
 
 
-router.get(`/:theme?`,getContent);
+router.get(`/`,getContent);
 router.post('/save',saveContent);
 router.post('/updateVote/:id',updateVote);
 router.get('/:id',getContentId);

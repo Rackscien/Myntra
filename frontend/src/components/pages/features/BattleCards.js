@@ -2,21 +2,8 @@ import React,{useState} from "react";
 import Vote from "../../../assets/Vote.png";
 import { addVote } from "../../../utils/BattleUtils";
 
-const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
-    vote=val.vote;
-    const [isVoted, setIsVoted] = useState(false);
-    const handleClick = ()=>{
-        setId(id);
-        if(isVoted){
-          setVote(vote-1);
-          addVote(id,vote-1,Theme,setContent)
-        } 
-        else{
-          setVote(vote+1);
-          addVote(id,vote+1,Theme,setContent)
-        }
-        setIsVoted(!isVoted);
-    }
+const BattleCards = ({ val,Theme,setContent }) => {
+    let id=val._id;
   return (
     <div
       style={{
@@ -52,7 +39,7 @@ const BattleCards = ({ val, id, setId,setVote,vote,Theme,setContent }) => {
           <img
             src={Vote}
             style={{ width: "20px", height: "20px", cursor: "pointer", }}
-            onClick={handleClick}
+            onClick={()=>{addVote(id,Theme,setContent)}}
             alt="vote"
           />
           <span style={{ fontSize: "20px" }}>{val.vote}</span>

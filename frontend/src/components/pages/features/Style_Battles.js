@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Men from "../Men";
-import Women from "../Women";
-import Kids from "../Kids";
+
 import User from "../User";
 import Features from "../Features";
 import "./styles/battle.css";
@@ -13,7 +11,7 @@ import BattleCards from "./BattleCards";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 
-const Style_Battles = ({ show, setShow }) => {
+const Style_Battles = ({ show,  }) => {
   const [id,setId]=useState("");
   const [themes, setThemes] = useState([]);
   const [Theme, setTheme] = useState("");
@@ -160,8 +158,8 @@ const Style_Battles = ({ show, setShow }) => {
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2} style={{padding:"5px"}}>
                     {content.map((val) => {
-                     return <Grid item onClick={()=>{setId(val._id); console.log(id)}} xs={3}>
-                        <BattleCards val={val} id={id} setId={setId} vote={vote} setVote={setVote} Theme={Theme} setContent={setContent}/>
+                     return <Grid item xs={3}>
+                        <BattleCards val={val} Theme={Theme} setContent={setContent}/>
                       </Grid>;
                     })}
                     

@@ -2,9 +2,11 @@
 const BattleMOdel = require('../models/BattleModel')
 
 module.exports.getContent = async (req,res)=>{
-    const theme = req.params.theme;
+    const {theme} = req.body;
+
     console.log(theme);
-    const content = await BattleMOdel.find({theme:theme})
+    const content = await BattleMOdel.find({theme:"Latest Fashion"})
+    // console.log(content)
     res.send(content)
 }
 
@@ -34,13 +36,12 @@ module.exports.deleteContent = async (req,res) => {
 
 module.exports.updateVote = async (req,res)=>{
     const {id}= req.params.id;
-    const {vote} = req.body;
+    // const {vote} = req.body;
     BattleMOdel
-    .findByIdAndUpdate(id,{vote})
+    .findByIdAndUpdate(id,{$inc:{"vote":+1}})
     .then(()=>{
-        const battle = require('../models/BattleModel');
-        battle.findById(id).then((data)=> res.send(data))
-        .catch((err)=> console.log(err))
+        // const battle = require('../models/BattleModel');
+       res.send("Updated")
     })
     .catch((err)=> console.log(err))
 

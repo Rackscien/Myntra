@@ -13,6 +13,12 @@ module.exports.getDataById= async(req,res)=>{
     res.send(data)
 }
 
+module.exports.getDataByGender=async(req,res)=>{
+    const gender=req.params.gender;
+    const data = await AllData.find({"name" : {$regex : `${gender}`}});
+    res.send(data)
+}
+
 // module.exports.check= async(req,res)=>{
 //     const id=req.params.id;
 //     const solution = req.params.solution;

@@ -57,7 +57,19 @@
         width: 100%;
     }
 } */
+.searchButton{
+    height: 4vh;
+    width: 4vh;
+    /* border-radius: 50%; */
+    border-radius: 4px;
 
+    
+}
+.searchButton:hover{
+    border: 2px solid #FB6F90;
+    border-radius: 2px;
+    cursor: pointer;
+}
 .slide-main{
     margin-top: 5px;
     background-color: white;
@@ -65,7 +77,7 @@
     height: 40vh;
     place-items: center;
     border-radius: 5px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
     /* position: relative; */
     border: 1px solid white;
 }
@@ -81,7 +93,7 @@
 }
 .slide-track{
     display: flex;
-    width: calc(250px*14);
+    width: calc(250px*13);
     animation: scroll 60s linear infinite;
 }
 

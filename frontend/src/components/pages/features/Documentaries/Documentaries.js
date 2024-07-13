@@ -29,7 +29,7 @@ const Documentaries = ({ show, setShow }) => {
       {show.features && <Features />}
 
       <div className="documentaries">
-        <div className="documentariesTop">
+        <div className="documentariesLeft">
           <div className="d1">
             <p>Youtube Id : </p>
             <input type="text" value={youtube_id} onChange={(e)=>{setYoutube_id(e.target.value)}}/>
@@ -50,16 +50,16 @@ const Documentaries = ({ show, setShow }) => {
             <button onClick={()=>{addDocumentaries(youtube_id,setYoutube_id, url,setUrl, Context,setContext,hashtags,setHashtages,setDocumentaries)}}>ADD</button>
           </div>
         </div>
-        <div className="documentariesBottom">
+        <div className="documentariesRight">
           {
             documentaries.map((val)=>{
               return  <div className="documentariesBottomIn">
           
               <YoutubeEmbed embedId={val.youtube_id} />
-              <div style={{marginLeft:"10px"}}>
-                <p style={{fontFamily:"serif", fontSize:"25px"}}>URL : <Link to={val.url} style={{fontSize:"25px"}}>{val.url}</Link></p>
-                <p style={{fontFamily:"serif", fontSize:"25px"}}>Context : {val.Context}</p>
-                <p style={{fontFamily:"serif", fontSize:"25px",display:"flex" }}>By : <p style={{color:"blue"}}>{val.hashtags}</p></p>
+              <div style={{marginLeft:"0px"}}>
+                <p style={{fontFamily:"serif", fontSize:"22px"}}>URL : <Link to={val.url} style={{fontSize:"20px"}}>{val.url}</Link></p>
+                <p style={{fontFamily:"serif", fontSize:"20px"}}>Context : {val.Context}</p>
+                <p style={{fontFamily:"serif", fontSize:"22px",display:"flex",alignItems:"center" }}>By : <p style={{color:"blue", fontSize:"18px"}}>{val.hashtags}</p></p>
               </div>
            
             </div>
