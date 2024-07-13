@@ -8,7 +8,7 @@ import MenCard from "./Cards/MenCard";
 import WomenCard from "./Cards/WomenCard";
 import { getWomenData } from "../../utils/AlldataUtils";
 
-function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchData  }) {
+function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchData, userName, userEmail, userAddress  }) {
 //   const [WomenData, setWomenData] = useState([]);
 //   const gender = "Women";
 //   useEffect(() => {
@@ -18,7 +18,7 @@ function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchD
     <div
     style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
   >
-    {show.user && <User />}
+    {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
     {show.features && <Features />}
     <div className="men">
       <div style={{backgroundColor:"white", overflowY:"scroll",width:"97vw",height:"89vh"}}>

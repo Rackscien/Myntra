@@ -10,7 +10,7 @@ import {
   getWomenData,
 } from "../../utils/AlldataUtils";
 
-const Home = ({ show, setShow }) => {
+const Home = ({ show, setShow ,userName, userEmail, userAddress}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const Home = ({ show, setShow }) => {
         top: "",
       }}
     >
-      {show.user && <User />}
+      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
       {show.features && <Features show={show} setShow={setShow} />}
       <div style={{minHeight:"89vh", backgroundColor:"white"}}>
       <div className="slide-main">

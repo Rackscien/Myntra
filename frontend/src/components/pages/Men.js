@@ -6,7 +6,7 @@ import { getMenData } from "../../utils/AlldataUtils";
 import { Box, Grid } from "@mui/material";
 import MenCard from "./Cards/MenCard";
 
-function Men({ show,setShow,wishListData,setWishListData, CartData,setCartData }) {
+function Men({ show,setShow,wishListData,setWishListData, CartData,setCartData ,userName, userEmail, userAddress }) {
   
   const [MenData, setMenData] = useState([]);
   const gender = "Men";
@@ -17,7 +17,7 @@ function Men({ show,setShow,wishListData,setWishListData, CartData,setCartData }
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User />}
+      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
       {show.features && <Features />}
       <div className="men">
         <div style={{backgroundColor:"white", overflowY:"scroll",position:""}}>

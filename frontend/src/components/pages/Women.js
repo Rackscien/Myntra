@@ -8,7 +8,7 @@ import MenCard from "./Cards/MenCard";
 import WomenCard from "./Cards/WomenCard";
 import { getWomenData } from "../../utils/AlldataUtils";
 
-function Women({ show,setShow,wishListData,setWishListData, CartData,setCartData  }) {
+function Women({ show,setShow,wishListData,setWishListData, CartData,setCartData ,userName, userEmail, userAddress }) {
   const [WomenData, setWomenData] = useState([]);
   const gender = "Women";
   useEffect(() => {
@@ -18,7 +18,7 @@ function Women({ show,setShow,wishListData,setWishListData, CartData,setCartData
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User />}
+      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
       {show.features && <Features />}
       <div className="men">
         <div style={{backgroundColor:"white", overflowY:"scroll"}}>

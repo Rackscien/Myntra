@@ -20,10 +20,13 @@ const Button = styled.button`
   color: black;
   border: none;
 `;
-const Header = ({ show, setShow,setSearchContent, setSearchData }) => {
+const Header = ({ show, setShow,setSearchContent, setSearchData, setUserName,setUserEmail,setUserAddress }) => {
   const { isAuthenticated, user } = useAuth0();
   if (isAuthenticated) {
     User = user.picture;
+    setUserName(`${user.name}`)
+    setUserEmail(`${user.email}`)
+    setUserAddress(`${user.gender}`)
   }
   const [input,setInput]= useState("")
   return (
@@ -240,9 +243,7 @@ const Header = ({ show, setShow,setSearchContent, setSearchData }) => {
           }}
           onClick={() => {
             setShow({
-              men: false,
-              women: false,
-              kids: false,
+              
               user: !show.user,
               features: false,
             });

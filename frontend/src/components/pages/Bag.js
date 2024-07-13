@@ -9,7 +9,7 @@ import WishListCard from './Cards/WishListCard';
 import { getCart } from '../../utils/CardUtils';
 import CartCard from './Cards/CartCard';
 
-function Bag({show,CartData,setCartData}) {
+function Bag({show,CartData,setCartData , userName, userEmail, userAddress}) {
   // const [WomenData, setWomenData] = useState([]);
   // const gender = "Women";
   useEffect(() => {
@@ -19,7 +19,7 @@ function Bag({show,CartData,setCartData}) {
     <div
     style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
   >
-    {show.user && <User />}
+    {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
     {show.features && <Features />}
     <div className="men">
       <div style={{backgroundColor:"white", overflowY:"scroll",width:"97vw",height:"89vh"}}>

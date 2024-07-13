@@ -28,7 +28,10 @@ function App() {
   const [user,setUser]=useState({
     email:""
   })
-
+  const [userName,setUserName]=useState("")
+  const [userEmail,setUserEmail]=useState("")
+  const [userAddress,setUserAddress]=useState("")
+  // const [userEmail, setUserEmail]=useState("")
   const [show, setShow] = useState({
     
     user:false,
@@ -43,22 +46,22 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route></Route>
-        <Route path='/' element={<Layout show={show} setShow={setShow} setSearchContent={setSearchContent} setSearchData={setSearchData}/>}>
-          <Route index element={<Home show={show} setShow={setShow}/>}/>
+        <Route path='/' element={<Layout show={show} setShow={setShow} setSearchContent={setSearchContent} setSearchData={setSearchData} setUserName={setUserName} setUserEmail={setUserEmail} setUserAddress={setUserAddress}/>}>
+          <Route index element={<Home show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
           <Route path='/login' element={<Login user={user} setUser={setUser}/>}/>
           <Route path='/register' element={<Register/>}/>
-          <Route path='/wishlist' element={<WishList show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} setCartData={setCartData}/>}/>
-          <Route path='/bag' element={<Bag show={show} setShow={setShow} CartData={CartData}  setCartData={setCartData}/>}/>
-          <Route path='/squad' element={<Style_Squads show={show} setShow={setShow}/>}/>
-          <Route path='/battles' element={<Style_Battles show={show} setShow={setShow}/>}/>
-          <Route path='/quiz' element={<Style_quiz show={show} setShow={setShow}/>}/>
-          <Route path='/diary' element={<Style_Diary show={show} setShow={setShow}/>}/>
-          <Route path='/scenes' element={<Behind_the_scenes show={show} setShow={setShow}/>}/>
-          <Route path='/fashion' element={<Latest_fashion show={show} setShow={setShow} />}/>
-          <Route path='/documentaries' element={<Documentaries show={show} setShow={setShow}/>}/>
-          <Route path='/men' element={<Men show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} CartData={CartData} setCartData={setCartData}/>}/>
-          <Route path='/women' element={<Women show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} setCartData={setCartData}/>}/>
-          <Route path='/search' element={<Search show={show} setShow={setShow}  setWishListData={setWishListData} setCartData={setCartData} searchData={searchData} setSearchData={setSearchData}/>}/>
+          <Route path='/wishlist' element={<WishList show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} setCartData={setCartData} userName={userName} userEmail={userEmail} userAddress={userAddress}/>} />
+          <Route path='/bag' element={<Bag show={show} setShow={setShow} CartData={CartData}  setCartData={setCartData} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/squad' element={<Style_Squads show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/battles' element={<Style_Battles show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/quiz' element={<Style_quiz show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/diary' element={<Style_Diary show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/scenes' element={<Behind_the_scenes show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/fashion' element={<Latest_fashion show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/documentaries' element={<Documentaries show={show} setShow={setShow} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/men' element={<Men show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} CartData={CartData} setCartData={setCartData} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
+          <Route path='/women' element={<Women show={show} setShow={setShow} wishListData={wishListData} setWishListData={setWishListData} setCartData={setCartData} userName={userName} userEmail={userEmail} userAddress={userAddress}/>} />
+          <Route path='/search' element={<Search show={show} setShow={setShow}  setWishListData={setWishListData} setCartData={setCartData} searchData={searchData} setSearchData={setSearchData} userName={userName} userEmail={userEmail} userAddress={userAddress}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

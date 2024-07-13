@@ -1,18 +1,18 @@
-import React from "react";
-
+import React from 'react'
+import { IoMdSend } from "react-icons/io";
 import User from "../User";
 import Features from "../Features";
-
-const Style_Squads = ({ show,  }) => {
+import "./styles/squad.css"
+const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
   return (
     <div
       style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User />}
+      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
       {show.features && <Features />}
       <div
         style={{
-          marginTop: "10vh",
+          marginTop: "0vh",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           minHeight: "90vh",
@@ -24,8 +24,16 @@ const Style_Squads = ({ show,  }) => {
           borderRadius: "5px",
         }}
       >
-        Style_Squads
-      </div>
+        <div className='squad'>
+              <div className='squad-text'>
+                main diary
+              </div>
+              <div className='squad-input'>
+                <input type='text' placeholder='Write Here..'/>
+                <IoMdSend  style={{width:"4vw",height:"5vh" , cursor:"pointer"}}/>
+              </div>
+            </div>
+          </div>
     </div>
   );
 };
