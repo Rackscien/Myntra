@@ -29,7 +29,7 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          borderRadius: "5px",
+          // borderRadius: "5px",
         }}
       >
         <div className='squad'>

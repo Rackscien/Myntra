@@ -10,6 +10,7 @@ import WishListCard from './Cards/WishListCard';
 function WishList({show,wishListData,setWishListData,setCartData, userName, userEmail, userAddress}) {
   // const [WomenData, setWomenData] = useState([]);
   // const gender = "Women";
+  
   useEffect(() => {
     getWishList(setWishListData);
   }, []);

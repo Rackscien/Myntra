@@ -33,12 +33,12 @@ const addCartData = (name,img,price,mrp,discount,seller,setCartData)=>{
     })
 }
 
-const removeCartData=(id, setCartData)=>{
-    console.log(id)
+const removeCartData=(_id, setCartData)=>{
+    // console.log(_id)
     axios
-    .post(`${BaseUrl}/delete`,{id})
+    .post(`${BaseUrl}/delete`,{_id})
     .then((data)=>{
-        // console.log(data);
+        console.log(data);
        
         getCart(setCartData);
     })

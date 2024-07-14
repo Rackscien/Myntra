@@ -20,9 +20,7 @@ module.exports.addWishListData= async(req,res)=>{
 }
 
 module.exports.deleteWishListData = async (req,res) => {
-    const {_id } = req.body;
-    WishListData
-    .findByIdAndDelete(_id)
-    .then(()=> res.send("Deleted Successfully...."))
-    .catch((err)=> console.log(err))
+    const {_id}= req.body;
+    WishListData.findByIdAndDelete(_id).
+    then(()=>res.send("Deleted Successfully")).catch((err)=>{console.log(err)})
 }

@@ -51,9 +51,9 @@ const WomenCard = ({ val,setWishListData,setCartData }) => {
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
         <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData); notify()}}>WishList</button>
-          <ToastContainer />
+         
           <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,setCartData); notify1()}}>Add</button>
-          <ToastContainer />
+      
         </div>
       </div>
     </div>

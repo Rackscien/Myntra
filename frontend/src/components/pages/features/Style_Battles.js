@@ -46,8 +46,8 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
           display: "flex",
           //   flexDirection: "column",
           alignItems: "center",
-          justifyContent: "space-between",
-          borderRadius: "5px",
+          justifyContent: "center",
+          // borderRadius: "5px",
           padding:"5px"
         }}
       >
@@ -76,22 +76,13 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
             </div>
           </div>
           <div style={{ padding: "10px", margin: "0px" }}>
-            <ul>
+            {/* <ul> */}
               {
                 // console.log(themes);
                 themes.map((val, ind) => {
                   return (
-                    <li
-                      style={{
-                        listStyleType: "none",
-                        margin: "5px 0px",
-                        backgroundColor: "pink",
-                        fontSize: "20px",
-                        height: "29px",
-                        borderRadius: "5px",
-                        paddingLeft: "5px",
-                        cursor:"pointer"
-                      }}
+                    <div className="theme"
+                     
                       // value={Theme}
                       key={ind}
                       onClick={(e) => {
@@ -100,11 +91,11 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
                       }}
                     >
                       {val.theme}
-                    </li>
+                    </div>
                   );
                 })
               }
-            </ul>
+            {/* </ul> */}
           </div>
         </div>
         <div className="right">
@@ -130,6 +121,7 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
                 <button
                   onClick={() => {
                     setBattleForm(!battleForm);
+
                   }}
                 >
                   Upload {Theme}

@@ -10,9 +10,9 @@
 }
 
 .squad-text{
-    height: 78vh;
+    height: 80vh;
     width: 69vw;
-    background-color: pink;
+    background-color: white;
     overflow-y: scroll;
 }
 .squad-input{

@@ -15,7 +15,7 @@ const WishListCard = ({ val,setCartData }) => {
   const mrp=val.mrp;
   const discount=val.discount;
   const seller=val.seller;
-  const id=val._id
+  // const id=val._id
   return (
     <div style={{ backgroundColor: "white", height: "60vh" }}>
       <div style={{height:"40.5vh", display:"flex", alignItems:"center"}}>
@@ -53,9 +53,9 @@ const WishListCard = ({ val,setCartData }) => {
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
           {/* <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData)}}>WishList</button> */}
           <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,setCartData); notify1()}}>Add</button>
-          <ToastContainer />
-          <button className="menButton" onClick={()=>{removeWishlistData(id,setCartData); notify()}}>Remove</button>
-          <ToastContainer />
+          {/* <ToastContainer /> */}
+          <button className="menButton" onClick={()=>{removeWishlistData(val._id,setCartData); notify()}}>Remove</button>
+          
         </div>
       </div>
     </div>

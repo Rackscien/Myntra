@@ -33,12 +33,12 @@ const addWishListData = (name,img,price,mrp,discount,seller,setWishListData)=>{
     })
 }
 
-const removeWishlistData= (id,setWishListData)=>{
-    console.log(id)
+const removeWishlistData= (_id,setWishListData)=>{
+    // console.log(id)
     axios
-    .post(`${BaseUrl}/delete`,{id})
+    .post(`${BaseUrl}/delete`,{_id})
     .then((data)=>{
-        // console.log(data);
+        console.log(data);
        
         getWishList(setWishListData);
     })

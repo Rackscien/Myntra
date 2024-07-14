@@ -16,7 +16,7 @@ const BattleCards = ({ val,Theme,setContent }) => {
         paddingTop: "",
       }}
     >
-      <img src={val.image} style={{ width: "15vw", height: "40vh",border:"1px solid grey" ,borderBottom:"none"}} alt="val"/>
+      <img src={val.image} style={{ width: "15vw", height: "43vh",border:"1px solid grey" ,borderBottom:"none"}} alt="val"/>
       <div
         style={{
           display: "flex",

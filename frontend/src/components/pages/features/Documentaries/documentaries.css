@@ -62,7 +62,7 @@
   height: 27px;
   width: 17vw;
   border: 1px solid #FB6F90;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-size: 13px;
 }
 .d1 button{
@@ -71,13 +71,14 @@
   width: 80px;
   border: 3px solid #FB6F90;
   font-size: large;
-  border-radius: 5px;
+ 
   background-color: white;
 }
 .d1 button:hover{
   cursor: pointer;
   background-color: #FB6F90;
   font-weight: 600;
+  border-radius: 5px;
   /* border: 3px solid black; */
 }
 .documentariesBottomIn{

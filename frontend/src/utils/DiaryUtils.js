@@ -6,12 +6,12 @@ const getDiaryData=(userName,setDiaryData)=>{
     axios.get(`${BaseUrl}/`,{userName})
     .then(({data})=>{
         console.log('diary--->',data)
-        const filter=[];
-        for(let i=0;i<data.length;i++){
-            if(data[i].userName===userName)
-                filter.push(data[i])
-        }
-        setDiaryData(filter);
+        // const filter=[];
+        // for(let i=0;i<data.length;i++){
+        //     if(data[i].userName===userName)
+        //         filter.push(data[i])
+        // }
+        setDiaryData(data);
     })
 }
 
