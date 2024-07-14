@@ -24,7 +24,7 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           minHeight: "90vh",
-          backgroundColor: "pink",
+          backgroundColor: "white",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -49,7 +49,7 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
                 <input type='text' placeholder='Write Here..' value={content} onChange={(e)=>{
                   setContent(e.target.value)
                 }}/>
-                <IoMdSend  style={{width:"4vw",height:"5vh" , cursor:"pointer"}} onClick={()=>{addSquadData(content,userName,setContent,setSquadData)}}/>
+                <IoMdSend className='sendlogo' style={{width:"4vw",height:"5vh" , cursor:"pointer",marginLeft:"4px", border:""}} onClick={()=>{addSquadData(content,userName,setContent,setSquadData)}}/>
               </div>
             </div>
           </div>

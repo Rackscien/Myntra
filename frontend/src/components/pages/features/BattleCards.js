@@ -11,18 +11,21 @@ const BattleCards = ({ val,Theme,setContent }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        border: "1px solid #FB6F90",
-        backgroundColor: "pink",
+        // border: "1px solid #FB6F90",
+        // backgroundColor: "pink",
         paddingTop: "",
       }}
     >
-      <img src={val.image} style={{ width: "100%", height: "40vh",border:"1px solid black" }} alt="val"/>
+      <img src={val.image} style={{ width: "15vw", height: "40vh",border:"1px solid grey" ,borderBottom:"none"}} alt="val"/>
       <div
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          width: "90%",
+          width: "15vw",
+          border:"1px solid grey",
           alignItems: "center",
+          padding:"5px",
+          borderTop:"none"
         }}
       >
         <h4>{val.name}</h4>
@@ -34,6 +37,7 @@ const BattleCards = ({ val,Theme,setContent }) => {
             alignItems: "center",
             marginRight: "5px",
             gap: "2px",
+            textTransform:"uppercase",
           }}
         >
           <img

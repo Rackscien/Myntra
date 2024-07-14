@@ -1,6 +1,6 @@
 .squad{
-    height: 86vh;
-    background-color: white;
+    height: 89vh;
+    background-color: pink;
     width: 70vw;
     border-radius: 5px;
     display: flex;
@@ -13,11 +13,12 @@
     height: 78vh;
     width: 69vw;
     background-color: pink;
+    overflow-y: scroll;
 }
 .squad-input{
     height: 6vh;
     width: 69vw;
-    /* background-color: black; */
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,4 +34,8 @@
     padding: 4px;
     font-size: 20px;
 
+}
+.sendlogo:hover{
+    background-color: #FB6F90;
+    border-radius: 5px;
 }

@@ -1,6 +1,6 @@
 .diary{
-    height: 86vh;
-    background-color: white;
+    height: 89vh;
+    background-color: pink;
     width: 70vw;
     border-radius: 5px;
     display: flex;
@@ -13,17 +13,19 @@
     height: 78vh;
     width: 69vw;
     background-color: pink;
+    overflow-y: scroll;
 }
 .diary-input{
     height: 6vh;
     width: 69vw;
-    /* background-color: black; */
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid grey;
     border-radius: 5px;
     padding: 5px;
+    margin-top: 5px;
 }
 .diary-input input{
     width: 66vw;
@@ -31,4 +33,9 @@
     height: 5vh;
     padding: 4px;
     font-size: 20px;
+
+}
+.sendlogo:hover{
+    background-color: #FB6F90;
+    border-radius: 5px;
 }

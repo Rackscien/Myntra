@@ -42,13 +42,15 @@
     
 }
 .right-top button{
-    height: 40px;
-    width: 100px;
+    /* height: 40px; */
+    width: 10vw;
+    padding: 5px;
     border: 2px solid #FB6F90;
     background-color: pink;
     font-size: large;
     cursor: pointer;
     border-radius: 5px;
+    text-transform:capitalize;
 }
 .right-top button:hover{
  background-color: white;

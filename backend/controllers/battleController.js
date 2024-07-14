@@ -2,10 +2,10 @@
 const BattleMOdel = require('../models/BattleModel')
 
 module.exports.getContent = async (req,res)=>{
-    const {theme} = req.body;
+    // const {theme} = req.body;
 
-    console.log(theme);
-    const content = await BattleMOdel.find({theme:"Latest Fashion"})
+    // console.log(theme);
+    const content = await BattleMOdel.find()
     // console.log(content)
     res.send(content)
 }

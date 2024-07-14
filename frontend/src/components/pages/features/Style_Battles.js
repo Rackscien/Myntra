@@ -132,7 +132,7 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
                     setBattleForm(!battleForm);
                   }}
                 >
-                  UPLOAD
+                  Upload {Theme}
                 </button>
               </div>
               {battleForm && (

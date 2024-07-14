@@ -2,11 +2,17 @@ import axios from 'axios'
 const BaseUrl="http://localhost:200/battle"
 
 const getContent=(Theme,setContent)=>{
-    console.log(`theme ${Theme}`);
+    // console.log(`theme ${Theme}`);
     axios.get(`${BaseUrl}/`,{theme:Theme})
     .then(({data})=>{
         console.log('Theme data--->',data)
-        setContent(data);
+        const filter=[];
+        for(let i=0;i<data.length;i++){
+            if(data[i].theme===Theme){
+                filter.push(data[i])
+            }
+        }
+        setContent(filter);
     })
 }
 
