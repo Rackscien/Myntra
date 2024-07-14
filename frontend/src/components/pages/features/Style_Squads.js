@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdSend } from "react-icons/io";
 import User from "../User";
 import Features from "../Features";
 import "./styles/squad.css"
+import { addSquadData, getSquadData } from '../../../utils/SquadUtils';
+import SquadCard from '../Cards/SquadCard';
+import SquadCard2 from '../Cards/SquadCard2';
 const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
+  const [content,setContent]=useState("")
+  const [squadData,setSquadData]=useState([]);
+  useEffect(()=>{
+    getSquadData(setSquadData);
+  },[])
   return (
     <div
       style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
@@ -26,11 +34,22 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
       >
         <div className='squad'>
               <div className='squad-text'>
-                main diary
+               {
+                squadData.map((val)=>{
+                  return <>{
+                    val.userName===userName?
+                    <SquadCard2 val={val}/>
+                  :<SquadCard val={val}/>
+                  }
+                  </>
+                })
+               }
               </div>
               <div className='squad-input'>
-                <input type='text' placeholder='Write Here..'/>
-                <IoMdSend  style={{width:"4vw",height:"5vh" , cursor:"pointer"}}/>
+                <input type='text' placeholder='Write Here..' value={content} onChange={(e)=>{
+                  setContent(e.target.value)
+                }}/>
+                <IoMdSend  style={{width:"4vw",height:"5vh" , cursor:"pointer"}} onClick={()=>{addSquadData(content,userName,setContent,setSquadData)}}/>
               </div>
             </div>
           </div>
