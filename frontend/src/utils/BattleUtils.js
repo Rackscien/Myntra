@@ -27,10 +27,10 @@ const addContent = (name,setName,image,setImage,Theme,vote,setContent)=>{
     })
 }
  
-const addVote=(id,Theme,setContent)=>{
-    // console.log(`${vote}`)
+const addVote=(id,vote,Theme,setContent)=>{
+    // console.log(`${vote}`)   
     axios
-    .post(`${BaseUrl}/updateVote/${id}`)
+    .post(`${BaseUrl}/updateVote/${id}`,{vote})
     .then((data)=>{
         console.log(data);
         // setVote(0);

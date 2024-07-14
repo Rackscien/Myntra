@@ -44,7 +44,7 @@ const CartCard = ({ val,setCartData }) => {
           <p style={{ fontWeight: "600", fontSize: "14px", marginRight: "4px" }}>
             Rs. {val.price}
           </p>
-          {discount != 0 ? <p style={{fontSize:"10px", color:"orange",marginLeft:"2px"}}>{discount} %off</p> : <></>}
+          {discount !== 0 ? <p style={{fontSize:"10px", color:"orange",marginLeft:"2px"}}>{discount} %off</p> : <></>}
         </div>
         </div>
        
@@ -53,7 +53,7 @@ const CartCard = ({ val,setCartData }) => {
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
           {/* <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData)}}>WishList</button> */}
           <button className="menButton" onClick={()=>{ removeCartData(val._id, setCartData); notify()}}>Remove</button>
-          <ToastContainer />
+          {/* <ToastContainer /> */}
 
         </div>
       </div>

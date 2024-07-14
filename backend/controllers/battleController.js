@@ -5,9 +5,10 @@ module.exports.getContent = async (req,res)=>{
     // const {theme} = req.body;
 
     // console.log(theme);
-    const content = await BattleMOdel.find()
+    BattleMOdel.find()
+    .then((data)=> res.send(data))
+    .catch((err)=> console.log(err))
     // console.log(content)
-    res.send(content)
 }
 
 module.exports.saveContent = async (req,res) => {
@@ -23,8 +24,9 @@ module.exports.saveContent = async (req,res) => {
 }
 module.exports.getContentId = async (req,res)=>{
     const id = req.params.id;
-    const content = await getcontentbyId(id);
-    res.send(content)
+    BattleMOdel.findById(id)
+    .then((data)=> res.send(data))
+    .catch((err)=> console.log(err))
 }
 module.exports.deleteContent = async (req,res) => {
     const {_id } = req.body;
@@ -35,14 +37,14 @@ module.exports.deleteContent = async (req,res) => {
 }
 
 module.exports.updateVote = async (req,res)=>{
-    const {id}= req.params.id;
-    // const {vote} = req.body;
+    const id= req.params.id;
+    const {vote} = req.body;
+    // res.send({id,vote});
     BattleMOdel
-    .findByIdAndUpdate(id,{$inc:{"vote":+1}})
-    .then(()=>{
-        // const battle = require('../models/BattleModel');
-       res.send("Updated")
+    .findByIdAndUpdate(id,{vote})
+    .then((data)=>{
+        console.log(data);
+        res.send("Updated Successfully....");
     })
     .catch((err)=> console.log(err))
-
 }
