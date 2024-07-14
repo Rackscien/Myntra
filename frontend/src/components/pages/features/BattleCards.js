@@ -4,6 +4,20 @@ import { addVote } from "../../../utils/BattleUtils";
 
 const BattleCards = ({ val,Theme,setContent }) => {
     let id=val._id;
+    const [vote, setVote] = useState(val.vote);
+    const [isVoted, setIsVote] = useState(false);
+    const handleClick=()=>{
+        console.log(id);
+        if(isVoted){
+          setVote(vote-1);
+          setIsVote(false);
+        }
+        else{
+          setVote(vote+1);
+          setIsVote(true);
+        }
+        addVote(id,vote,Theme,setContent);
+    }
   return (
     <div
       style={{
@@ -43,7 +57,7 @@ const BattleCards = ({ val,Theme,setContent }) => {
           <img
             src={Vote}
             style={{ width: "20px", height: "20px", cursor: "pointer", }}
-            onClick={()=>{addVote(id,Theme,setContent)}}
+            onClick={handleClick}
             alt="vote"
           />
           <span style={{ fontSize: "20px" }}>{val.vote}</span>

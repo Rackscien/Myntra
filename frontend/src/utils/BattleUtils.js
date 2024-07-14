@@ -5,7 +5,7 @@ const getContent=(Theme,setContent)=>{
     // console.log(`theme ${Theme}`);
     axios.get(`${BaseUrl}/`,{theme:Theme})
     .then(({data})=>{
-        console.log('Theme data--->',data)
+        // console.log('Theme data--->',data)
         const filter=[];
         for(let i=0;i<data.length;i++){
             if(data[i].theme===Theme){
