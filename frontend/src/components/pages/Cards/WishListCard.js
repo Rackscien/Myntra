@@ -44,7 +44,7 @@ const WishListCard = ({ val,setCartData,userName }) => {
           <p style={{ fontWeight: "600", fontSize: "14px", marginRight: "4px" }}>
             Rs. {val.price}
           </p>
-          {discount != 0 ? <p style={{fontSize:"10px", color:"orange",marginLeft:"2px"}}>{discount} %off</p> : <></>}
+          {discount !== 0 ? <p style={{fontSize:"10px", color:"orange",marginLeft:"2px"}}>{discount} %off</p> : <></>}
         </div>
         </div>
        

@@ -19,7 +19,8 @@ const getWishList=(userName,setWishListData)=>{
             obj.img4 = img1[3];
             obj.img5 = img1[4];
             obj.img6 = img1[5];
-            maindata.push(obj);}
+            maindata.push(obj);
+        }
         }
         setWishListData(maindata);
     })

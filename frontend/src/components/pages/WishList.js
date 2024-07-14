@@ -14,6 +14,7 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
   useEffect(() => {
     getWishList(userName,setWishListData);
   }, []);
+  const length=wishListData.length;
   return (
     <div
     style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
@@ -21,8 +22,12 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
     {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
     {show.features && <Features />}
     <div className="men">
+    {
+        length===0?<div style={{backgroundColor:"white",width:"97vw",height:"89vh", display:"flex",alignItems:"center", justifyContent:"center", fontSize:"8vh",color:"#FB6F90"}}> Nothing Wishlisted Yet !</div>:
       <div style={{backgroundColor:"white", overflowY:"scroll",width:"97vw",height:"89vh"}}>
-      <Box sx={{ flexGrow: 1 }}>
+     
+        
+        <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} style={{ padding: "5px",  }}>
             {wishListData.map((val) => {
               return (
@@ -34,7 +39,9 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
             })}
           </Grid>
         </Box>
-      </div>
+        </div>
+        }
+      
 
      
     </div>

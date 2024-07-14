@@ -52,7 +52,7 @@ const CartCard = ({ val,setCartData,userName }) => {
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
           {/* <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData)}}>WishList</button> */}
-          <button className="menButton" onClick={()=>{ removeCartData(val._id, setCartData, userName); notify()}}>Remove</button>
+          <button className="menButton" onClick={()=>{ removeCartData(val._id, userName,setCartData); notify()}}>Remove</button>
           {/* <ToastContainer /> */}
 
         </div>
