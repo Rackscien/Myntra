@@ -12,7 +12,7 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
   // const gender = "Women";
   
   useEffect(() => {
-    getWishList(setWishListData);
+    getWishList(userName,setWishListData);
   }, []);
   return (
     <div
@@ -27,7 +27,7 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
             {wishListData.map((val) => {
               return (
                 <Grid item xs={2}>
-                  <WishListCard val={val} setCartData={setCartData}/>
+                  <WishListCard val={val} setCartData={setCartData} userName={userName}/>
                   {/*  */}
                 </Grid>
               );

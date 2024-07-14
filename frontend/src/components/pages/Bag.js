@@ -13,7 +13,7 @@ function Bag({show,CartData,setCartData , userName, userEmail, userAddress}) {
   // const [WomenData, setWomenData] = useState([]);
   // const gender = "Women";
   useEffect(() => {
-    getCart(setCartData);
+    getCart(userName,setCartData);
   }, []);
   return (
     <div
@@ -28,7 +28,7 @@ function Bag({show,CartData,setCartData , userName, userEmail, userAddress}) {
             {CartData.map((val) => {
               return (
                 <Grid item xs={2}>
-                  <CartCard val={val} setCartData={setCartData}/>
+                  <CartCard val={val} setCartData={setCartData} userName={userName}/>
                   {/*  */}
                 </Grid>
               );

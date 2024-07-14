@@ -27,7 +27,7 @@ function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchD
               {searchData.map((val) => {
                 return (
                   <Grid item xs={2}>
-                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData} />
+                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData} userName={userName}/>
                     
                   </Grid>
                 );
