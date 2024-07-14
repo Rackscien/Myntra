@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { addCartData } from "../../../utils/CardUtils";
 import { removeWishlistData } from "../../../utils/WishListUtils";
 
-const WishListCard = ({ val,setCartData }) => {
+const WishListCard = ({ val,setCartData,userName }) => {
   const notify = () => toast("Successfully Removed");
   const notify1 = () => toast("Successfully Added to Cart");
   console.log(val);
@@ -52,9 +52,9 @@ const WishListCard = ({ val,setCartData }) => {
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
           {/* <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData)}}>WishList</button> */}
-          <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,setCartData); notify1()}}>Add</button>
+          <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,userName, setCartData); notify1()}}>Add</button>
           {/* <ToastContainer /> */}
-          <button className="menButton" onClick={()=>{removeWishlistData(val._id,setCartData); notify()}}>Remove</button>
+          <button className="menButton" onClick={()=>{removeWishlistData(val._id,userName,setCartData); notify()}}>Remove</button>
           
         </div>
       </div>

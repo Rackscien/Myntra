@@ -8,10 +8,10 @@ module.exports.getCartData= async(req,res)=>{
 }
 
 module.exports.addCartData= async(req,res)=>{
-    const {name,img,price,mrp,discount,seller} = req.body;
+    const {name,img,price,mrp,discount,seller,userName} = req.body;
     
     CartData
-    .create({name,img,price,mrp,discount,seller})
+    .create({name,img,price,mrp,discount,seller,userName})
     .then((data)=>{
         console.log("Added Successfully...");
         console.log(data);

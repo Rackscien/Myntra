@@ -8,10 +8,10 @@ module.exports.getWishListData= async(req,res)=>{
 }
 
 module.exports.addWishListData= async(req,res)=>{
-    const {name,img,price,mrp,discount,seller} = req.body;
+    const {name,img,price,mrp,discount,seller,userName} = req.body;
     
     WishListData
-    .create({name,img,price,mrp,discount,seller})
+    .create({name,img,price,mrp,discount,seller,userName})
     .then((data)=>{
         console.log("Added Successfully...");
         console.log(data);

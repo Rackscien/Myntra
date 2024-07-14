@@ -4,8 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { addCartData } from "../../../utils/CardUtils";
 
-const WomenCard = ({ val,setWishListData,setCartData }) => {
-  const notify = () => toast("Successfully WishListed");
+const WomenCard = ({ val,setWishListData,setCartData, userName }) => {
+  const notify = () => toast("Successfully Removed");
   const notify1 = () => toast("Successfully Added to Cart");
   console.log(val);
   // const discount = val.discount;
@@ -50,9 +50,9 @@ const WomenCard = ({ val,setWishListData,setCartData }) => {
        
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
-        <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData); notify()}}>WishList</button>
+        <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,userName,setWishListData); notify()}}>WishList</button>
          
-          <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,setCartData); notify1()}}>Add</button>
+          <button className="menButton" onClick={()=>{addCartData(name,img,price,mrp,discount,seller,userName, setCartData); notify1()}}>Add</button>
       
         </div>
       </div>

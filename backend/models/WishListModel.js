@@ -27,6 +27,11 @@ const WishListSchema = new mongoose.Schema({
         type:String,
         require:true,
     },
+    userName:{
+        type:String,
+        require: true,
+
+    }
    
 
 });

@@ -26,7 +26,7 @@ function Men({ show,setShow,wishListData,setWishListData, CartData,setCartData ,
               {MenData.map((val) => {
                 return (
                   <Grid item xs={2}>
-                    <MenCard val={val} setWishListData={setWishListData} setCartData={setCartData}/>
+                    <MenCard val={val} setWishListData={setWishListData} setCartData={setCartData} userName={userName}/>
                     {/*  */}
                   </Grid>
                 );
