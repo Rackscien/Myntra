@@ -31,7 +31,7 @@ const QuizCards = ({val}) => {
         <p className={`p1 ${css[2]}`} value={answer} onClick={(e)=>{setAnswer(`${val.option3}`); setCheck(true); setCss(["","","checked",""]);}}>{val.option3}</p>
         <p className={`p1 ${css[3]}`} value={answer} onClick={(e)=>{setAnswer(`${val.option4}`); setCheck(true); setCss(["","","","checked"]);}}>{val.option4}</p>
       </div>
-      {(check)?<button onClick={handleSubmit} style={{height:"100px"}}>Submit</button> : <></>}
+      {(check)?<button onClick={handleSubmit} >Submit</button> : <></>}
       {showResult && <>
           {(status===true)?<h3 style={{color:"green",margin:"2px"}}>Correct</h3>:<h3 style={{color:"red",margin:"2px"}}>Incorrect</h3>}
         </>
