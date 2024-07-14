@@ -5,21 +5,22 @@ import Features from "./Features";
 import "./features/styles/Home.css";
 import {
   getData,
-  getMenData,
+  getGenderData,
+
   getWatch,
-  getWomenData,
+ 
 } from "../../utils/AlldataUtils";
 
-const Home = ({ show, setShow ,userName, userEmail, userAddress}) => {
+const Home = ({ show, setShow }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getMenData("Men", setData);
+    getGenderData("Men", setData);
   }, []);
 
   const [women, setWomen] = useState([]);
   useEffect(() => {
-    getWomenData("Women", setWomen);
+    getGenderData("Women", setWomen);
   }, []);
   console.log("Length", women.length);
   const someWomen = [];
@@ -41,7 +42,7 @@ const Home = ({ show, setShow ,userName, userEmail, userAddress}) => {
         top: "",
       }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
+      {show.user && <User />}
       {show.features && <Features show={show} setShow={setShow} />}
       <div style={{minHeight:"89vh", backgroundColor:"white"}}>
       <div className="slide-main">

@@ -4,7 +4,7 @@ const { getDiaryData, addDiaryData } = require('../controllers/DiaryController')
 const router = Router();
 
 
-router.get(`/`,getDiaryData);
+router.post(`/`,getDiaryData);
 router.post('/save',addDiaryData);
 // router.post('/delete', deleteWishListData );
 

@@ -1,9 +1,9 @@
 import axios from 'axios'
 const BaseUrl="http://localhost:200/diary"
 
-const getDiaryData=(userName,setDiaryData)=>{
+const getDiaryData=(userEmail,setDiaryData)=>{
     // console.log(`${theme}`);
-    axios.get(`${BaseUrl}/`,{userName})
+    axios.post(`${BaseUrl}/`,{userEmail})
     .then(({data})=>{
         console.log('diary--->',data)
         // const filter=[];
@@ -15,13 +15,13 @@ const getDiaryData=(userName,setDiaryData)=>{
     })
 }
 
-const addDiaryData= (content,userName,setContent,setDiaryData)=>{
+const addDiaryData= (content,userName,userEmail,setContent,setDiaryData)=>{
     axios
-    .post(`${BaseUrl}/save`,{userName,content})
+    .post(`${BaseUrl}/save`,{userName,content,userEmail})
     .then((data)=>{
         console.log(data);
         setContent("");
-        getDiaryData(userName,setDiaryData);
+        getDiaryData(userEmail,setDiaryData);
     })
 }
 

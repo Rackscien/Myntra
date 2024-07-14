@@ -8,7 +8,7 @@ import MenCard from "./Cards/MenCard";
 import WomenCard from "./Cards/WomenCard";
 import { getWomenData } from "../../utils/AlldataUtils";
 
-function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchData, userName, userEmail, userAddress  }) {
+function Search({ show,setShow,setWishListData,setCartData,searchData}) {
 //   const [WomenData, setWomenData] = useState([]);
 //   const gender = "Women";
 //   useEffect(() => {
@@ -18,8 +18,8 @@ function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchD
     <div
     style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
   >
-    {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-    {show.features && <Features />}
+    {show.user && <User />}
+    {show.features && <Features show={show} setShow={setShow} />}
     <div className="men">
       <div style={{backgroundColor:"white", overflowY:"scroll",width:"97vw",height:"89vh"}}>
           <Box sx={{ flexGrow: 1 }}>
@@ -27,7 +27,7 @@ function Search({ show,setShow,setWishListData,setCartData,searchData,setSearchD
               {searchData.map((val) => {
                 return (
                   <Grid item xs={2}>
-                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData} userName={userName}/>
+                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData} />
                     
                   </Grid>
                 );

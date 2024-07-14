@@ -8,10 +8,10 @@ module.exports.getSquadData= async(req,res)=>{
 }
 
 module.exports.addSqadData= async(req,res)=>{
-    const {userName,content} = req.body;
+    const {userName,content,userEmail} = req.body;
     
     squadSchema
-    .create({userName,content})
+    .create({userName,content,userEmail})
     .then((data)=>{
         console.log("Added Successfully...");
         console.log(data);

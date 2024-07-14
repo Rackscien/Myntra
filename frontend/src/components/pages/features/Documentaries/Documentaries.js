@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import { addDocumentaries, getDocumentaries } from "./DocumentaryUtils";
 
-const Documentaries = ({ show, setShow ,userName, userEmail, userAddress }) => {
+const Documentaries = ({ show, setShow }) => {
   const [youtube_id,setYoutube_id]=useState("")
   const [url,setUrl]=useState("")
   const [ Context,setContext]=useState("")
@@ -25,8 +25,8 @@ const Documentaries = ({ show, setShow ,userName, userEmail, userAddress }) => {
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-      {show.features && <Features />}
+      {show.user && <User/>}
+      {show.features && <Features show={show} setShow={setShow} />}
 
       <div className="documentaries">
         <div className="documentariesLeft">

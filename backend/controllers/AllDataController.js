@@ -14,7 +14,7 @@ module.exports.getDataById= async(req,res)=>{
 }
 
 module.exports.getDataByGender=async(req,res)=>{
-    const gender=req.params.gender;
+    const {gender}=req.body;
     const data = await AllData.find({"name" : {$regex : `${gender}`}});
     res.send(data)
 }

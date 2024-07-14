@@ -7,7 +7,7 @@ const {
 
 const router = Router();
 
-router.get(`/`, getCartData);
+router.post(`/`, getCartData);
 router.post("/save", addCartData);
 
 router.post("/delete", deleteCartData);

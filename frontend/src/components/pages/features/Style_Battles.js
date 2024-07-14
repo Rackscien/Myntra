@@ -11,7 +11,7 @@ import BattleCards from "./BattleCards";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 
-const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
+const Style_Battles = ({ show,setShow}) => {
   const [id,setId]=useState("");
   const [themes, setThemes] = useState([]);
   const [Theme, setTheme] = useState("");
@@ -34,8 +34,8 @@ const Style_Battles = ({ show,userName, userEmail, userAddress  }) => {
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-      {show.features && <Features />}
+      {show.user && <User />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div
         style={{
           marginTop: "0vh",

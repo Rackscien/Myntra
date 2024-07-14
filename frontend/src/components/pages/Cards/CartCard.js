@@ -3,8 +3,8 @@ import React from "react";
 import { removeCartData } from "../../../utils/CardUtils";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-
-const CartCard = ({ val,setCartData,userName }) => {
+  import { useAuth0 } from "@auth0/auth0-react";
+const CartCard = ({ val,setCartData }) => {
   const notify = () => toast("Successfully Removed");
 
   console.log(val);
@@ -16,6 +16,8 @@ const CartCard = ({ val,setCartData,userName }) => {
   const discount=val.discount;
   const seller=val.seller;
   const id=val._id
+  const { isAuthenticated, user } = useAuth0();
+  const userEmail = user?.email;
   return (
     <div style={{ backgroundColor: "white", height: "60vh" }}>
       <div style={{height:"40.5vh", display:"flex", alignItems:"center"}}>
@@ -52,7 +54,7 @@ const CartCard = ({ val,setCartData,userName }) => {
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
           {/* <button className="menButton" onClick={()=>{addWishListData(name,img,price,mrp,discount,seller,setWishListData)}}>WishList</button> */}
-          <button className="menButton" onClick={()=>{ removeCartData(val._id, userName,setCartData); notify()}}>Remove</button>
+          <button className="menButton" onClick={()=>{ removeCartData(val._id, userEmail,setCartData); notify()}}>Remove</button>
           {/* <ToastContainer /> */}
 
         </div>

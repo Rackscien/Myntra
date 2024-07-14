@@ -6,7 +6,7 @@ import { addCartData } from "../../../utils/CardUtils";
 import { useAuth0 } from "@auth0/auth0-react";
 
 
-const WomenCard = ({ val,setWishListData,setCartData, userName }) => {
+const WomenCard = ({ val,setWishListData,setCartData}) => {
   const notify = () => toast("Successfully Wishlist");
   const notify2 = () => toast("Please Login !");
   const notify1 = () => toast("Successfully Added to Cart");
@@ -19,7 +19,7 @@ const WomenCard = ({ val,setWishListData,setCartData, userName }) => {
   const discount=val.discount;
   const seller=val.seller;
   const { isAuthenticated, user } = useAuth0();
-
+  const userEmail=user?.email;
   return (
     <div style={{ backgroundColor: "white", height: "60vh" }}>
       <div style={{height:"40.5vh", display:"flex", alignItems:"center"}}>
@@ -57,14 +57,14 @@ const WomenCard = ({ val,setWishListData,setCartData, userName }) => {
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
         <button className="menButton" onClick={()=>{
           if(isAuthenticated){
-          addWishListData(name,img,price,mrp,discount,seller,userName,setWishListData); notify()}
+          addWishListData(name,img,price,mrp,discount,seller,userEmail,setWishListData); notify()}
           else{
             notify2();
           }
           }}>WishList</button>
          
           <button className="menButton" onClick={()=>{if(isAuthenticated){
-          addCartData(name,img,price,mrp,discount,seller,userName,setWishListData); notify1()}
+          addCartData(name,img,price,mrp,discount,seller,userEmail,setCartData); notify1()}
           else{
             notify2();
           }}}>Add</button>

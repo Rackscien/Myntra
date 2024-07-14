@@ -3,13 +3,13 @@ import React from 'react'
 import User from "../User";
 import Features from "../Features";
 
-const Latest_fashion = ({ show, userName, userEmail, userAddress }) => {
+const Latest_fashion = ({ show,setShow}) => {
     return (
         <div
           style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
         >
-          {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-          {show.features && <Features />}
+          {show.user && <User/>}
+          {show.features && <Features show={show} setShow={setShow} />}
           <div
             style={{
               marginTop: "10vh",

@@ -7,7 +7,7 @@ import QuizCards from "./QuizCards";
 
 
 
-const Style_quiz = ({ show, setShow,userName, userEmail, userAddress }) => {
+const Style_quiz = ({ show, setShow}) => {
   
   const [allquiz,setAllQuiz]=useState([]);
   const [question, setQuestion] =useState("")
@@ -25,8 +25,8 @@ const Style_quiz = ({ show, setShow,userName, userEmail, userAddress }) => {
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-      {show.features && <Features />}
+      {show.user && <User/>}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div className="quizMain">
         <div className="quizleft">
           <div className="question">

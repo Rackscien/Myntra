@@ -1,14 +1,14 @@
 import axios from 'axios'
 const BaseUrl="http://localhost:200/wishList"
 
-const getWishList=(userName,setWishListData)=>{
+const getWishList=(userEmail,setWishListData)=>{
     // console.log(`${theme}`);
     const maindata = [];
-    axios.get(`${BaseUrl}/`)
+    axios.post(`${BaseUrl}/`,{userEmail})
     .then(({data})=>{
         // console.log('Data--->',data)
         for(let i=0;i<data.length;i++){
-            if(data[i].userName===userName){
+            
             const img1 = data[i].img.toString().split(";");
             console.log(img1[6]);
             const obj = data[i];
@@ -21,28 +21,28 @@ const getWishList=(userName,setWishListData)=>{
             obj.img6 = img1[5];
             maindata.push(obj);
         }
-        }
+        
         setWishListData(maindata);
     })
 }
-const addWishListData = (name,img,price,mrp,discount,seller,userName,setWishListData)=>{
+const addWishListData = (name,img,price,mrp,discount,seller,userEmail,setWishListData)=>{
     axios
-    .post(`${BaseUrl}/save`,{name,img,price,mrp,discount,seller,userName})
+    .post(`${BaseUrl}/save`,{name,img,price,mrp,discount,seller,userEmail})
     .then((data)=>{
         // console.log(data);
        
-        getWishList(userName,setWishListData);
+        getWishList(userEmail,setWishListData);
     })
 }
 
-const removeWishlistData= (_id,userName,setWishListData)=>{
+const removeWishlistData= (_id,userEmail,setWishListData)=>{
     // console.log(id)
     axios
     .post(`${BaseUrl}/delete`,{_id})
     .then((data)=>{
         console.log(data);
        
-        getWishList(userName,setWishListData);
+        getWishList(userEmail,setWishListData);
     })
 }
 export {getWishList, addWishListData,removeWishlistData}

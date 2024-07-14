@@ -8,19 +8,20 @@ import { getWishList } from "../../utils/WishListUtils";
 import WishListCard from "./Cards/WishListCard";
 import { getCart } from "../../utils/CardUtils";
 import CartCard from "./Cards/CartCard";
-
+import { useAuth0 } from "@auth0/auth0-react";
 function Bag({
   show,
+  setShow,
   CartData,
   setCartData,
-  userName,
-  userEmail,
-  userAddress,
+ 
 }) {
   // const [WomenData, setWomenData] = useState([]);
   // const gender = "Women";
+  const { isAuthenticated, user } = useAuth0();
+  const userEmail=user?.email
   useEffect(() => {
-    getCart(userName, setCartData);
+    getCart(userEmail, setCartData);
   }, []);
   let length = CartData.length;
   return (
@@ -29,12 +30,9 @@ function Bag({
     >
       {show.user && (
         <User
-          userName={userName}
-          userEmail={userEmail}
-          userAddress={userAddress}
         />
       )}
-      {show.features && <Features />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div className="men">
         {length === 0 ? (
           <div
@@ -69,7 +67,7 @@ function Bag({
                       <CartCard
                         val={val}
                         setCartData={setCartData}
-                        userName={userName}
+                       
                       />
                       {/*  */}
                     </Grid>

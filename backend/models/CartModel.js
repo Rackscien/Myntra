@@ -27,7 +27,7 @@ const CardSchema = new mongoose.Schema({
         type:String,
         require:true,
     },
-    userName:{
+    userEmail:{
         type:String,
         require:true,
     }

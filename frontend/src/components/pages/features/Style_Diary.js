@@ -5,25 +5,24 @@ import Features from "../Features";
 import "./styles/diary.css";
 import { addDiaryData, getDiaryData } from "../../../utils/DiaryUtils";
 import DiaryCards from "../Cards/DiaryCards";
+import { useAuth0 } from "@auth0/auth0-react";
 
-const Style_Diary = ({ show, userName, userEmail, userAddress }) => {
+const Style_Diary = ({ show, setShow}) => {
   const [content, setContent] = useState("");
   const [DiaryData, setDiaryData] = useState([]);
+  const { isAuthenticated, user } = useAuth0();
+  const userEmail = user?.email;
+  const userName = user?.name;
+
   useEffect(() => {
-    getDiaryData(userName, setDiaryData);
+    getDiaryData(userEmail, setDiaryData);
   }, []);
   return (
     <div
       style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && (
-        <User
-          userName={userName}
-          userEmail={userEmail}
-          userAddress={userAddress}
-        />
-      )}
-      {show.features && <Features />}
+      {show.user && <User />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div
         style={{
           marginTop: "0vh",
@@ -63,7 +62,7 @@ const Style_Diary = ({ show, userName, userEmail, userAddress }) => {
                 border: "",
               }}
               onClick={() => {
-                addDiaryData(content, userName, setContent, setDiaryData);
+                addDiaryData(content, userName, userEmail,setContent, setDiaryData);
               }}
             />
           </div>

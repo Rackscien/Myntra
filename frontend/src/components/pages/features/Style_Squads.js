@@ -6,9 +6,13 @@ import "./styles/squad.css"
 import { addSquadData, getSquadData } from '../../../utils/SquadUtils';
 import SquadCard from '../Cards/SquadCard';
 import SquadCard2 from '../Cards/SquadCard2';
-const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
+import { useAuth0 } from "@auth0/auth0-react";
+const Style_Squads = ({ show,setShow }) => {
   const [content,setContent]=useState("")
   const [squadData,setSquadData]=useState([]);
+  const { isAuthenticated, user } = useAuth0();
+  const userEmail = user?.email;
+  const userName =user?.name
   useEffect(()=>{
     getSquadData(setSquadData);
   },[])
@@ -16,8 +20,8 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
     <div
       style={{ minHeight: "90vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-      {show.features && <Features />}
+      {show.user && <User />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div
         style={{
           marginTop: "0vh",
@@ -37,7 +41,7 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
                {
                 squadData.map((val)=>{
                   return <>{
-                    val.userName===userName?
+                    val.userEmail===userEmail?
                     <SquadCard2 val={val}/>
                   :<SquadCard val={val}/>
                   }
@@ -49,7 +53,7 @@ const Style_Squads = ({ show, userName, userEmail, userAddress }) => {
                 <input type='text' placeholder='Write Here..' value={content} onChange={(e)=>{
                   setContent(e.target.value)
                 }}/>
-                <IoMdSend className='sendlogo' style={{width:"4vw",height:"5vh" , cursor:"pointer",marginLeft:"4px", border:""}} onClick={()=>{addSquadData(content,userName,setContent,setSquadData)}}/>
+                <IoMdSend className='sendlogo' style={{width:"4vw",height:"5vh" , cursor:"pointer",marginLeft:"4px", border:""}} onClick={()=>{addSquadData(content,userName,userEmail,setContent,setSquadData)}}/>
               </div>
             </div>
           </div>

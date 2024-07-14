@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./features/styles/features.css"
+import { useAuth0 } from "@auth0/auth0-react";
+import { ToastContainer, toast } from 'react-toastify';
+
+
 const Features = ({show, setShow}) => {
+  const notify2 = () => toast("Please Login !");
+  const { isAuthenticated, user } = useAuth0();
   const x = {
     textDecoration: "none",
     color: "grey",
@@ -22,9 +28,7 @@ const Features = ({show, setShow}) => {
   };
   const remove=()=>{
     setShow({
-        men: false,
-        women: false,
-        kids: false,
+        
         user: false,
         features:false,
       })

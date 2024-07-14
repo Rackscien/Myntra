@@ -2,15 +2,15 @@
 const BattleMOdel = require('../models/BattleModel')
 
 module.exports.getContent = async (req,res)=>{
-    // const {theme} = req.body;
+    const {theme} = req.body;
 
     // console.log(theme);
-    const content = await BattleMOdel.find()
+    const content = await BattleMOdel.find({theme})
     // console.log(content)
     res.send(content)
 }
 
-module.exports.saveContent = async (req,res) => {
+module.exports.saveContent =  (req,res) => {
     const { image,theme,name,vote } = req.body;
     BattleMOdel
     .create({ image,theme,name,vote})

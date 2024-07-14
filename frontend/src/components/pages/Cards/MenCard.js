@@ -18,6 +18,7 @@ const MenCard = ({ val,setWishListData,setCartData ,userName}) => {
   const discount=val.discount;
   const seller=val.seller;
   const { isAuthenticated, user } = useAuth0();
+  const userEmail = user?.email;
   return (
     <div style={{ backgroundColor: "white", height: "60vh" }}>
       <div style={{height:"40.5vh", display:"flex", alignItems:"center"}}>
@@ -53,13 +54,13 @@ const MenCard = ({ val,setWishListData,setCartData ,userName}) => {
        
 
         <div style={{height:"3vh",display:"flex", alignItems:"center", justifyContent:"space-between",}}>
-          <button className="menButton" onClick={()=>{if(isAuthenticated){addWishListData(name,img,price,mrp,discount,seller,userName,setWishListData); notify()}
+          <button className="menButton" onClick={()=>{if(isAuthenticated){addWishListData(name,img,price,mrp,discount,seller,userEmail,setWishListData); notify()}
             else{
               notify2();
             }
           }}>WishList</button>
          
-          <button className="menButton" onClick={()=>{if(isAuthenticated){addCartData(name,img,price,mrp,discount,seller,userName, setCartData); notify1()}
+          <button className="menButton" onClick={()=>{if(isAuthenticated){addCartData(name,img,price,mrp,discount,seller,userEmail, setCartData); notify1()}
            else{
             notify2();
            }

@@ -8,6 +8,8 @@ import Bag from "../../assets/shopping-bag.jpg";
 import User from "../../assets/user.jpg";
 import { BsSearch } from "react-icons/bs";
 import { getAnyData } from "../../utils/AlldataUtils";
+import { ToastContainer, toast } from 'react-toastify';
+
 const Button = styled.button`
   width: 8vw;
   background-color: pink;
@@ -29,6 +31,7 @@ const Header = ({ show, setShow,setSearchContent, setSearchData, setUserName,set
     setUserAddress(`${user.gender}`)
   }
   const [input,setInput]= useState("")
+  const notify2 = () => toast("Please Login !");
   return (
     <div
       style={{
@@ -130,11 +133,14 @@ const Header = ({ show, setShow,setSearchContent, setSearchData, setUserName,set
               cursor: "pointer",
               fontSize: "18px",
             }}
-            onClick={() => {
-              setShow({
+            onClick={() => {if(isAuthenticated)
+             { setShow({
                 user: false,
                 features: !show.features,
-              });
+              });}
+              else{
+                notify2()
+              }
             }}
           >
             FEATURES
@@ -169,7 +175,7 @@ const Header = ({ show, setShow,setSearchContent, setSearchData, setUserName,set
             width: "17vw",
             // marginLeft: "4px",
             paddingLeft:"5px",
-            textTransform:"capitalize"
+            // textTransform:"capitalize"
             // textAlign:"center"
           }}
           value={input}

@@ -6,7 +6,7 @@ const router = Router();
 
 router.get(`/`,getData);
 router.get(`/id/:id?`,getDataById);
-router.get(`/:gender?`,getDataByGender);
+router.post(`/search?`,getDataByGender);
 
 
  module.exports = router;

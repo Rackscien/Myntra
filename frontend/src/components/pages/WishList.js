@@ -6,21 +6,23 @@ import { Box, Grid } from "@mui/material";
 import MenCard from "./Cards/MenCard";
 import { getWishList } from '../../utils/WishListUtils';
 import WishListCard from './Cards/WishListCard';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function WishList({show,wishListData,setWishListData,setCartData, userName, userEmail, userAddress}) {
+function WishList({show,setShow,wishListData,setWishListData,setCartData}) {
   // const [WomenData, setWomenData] = useState([]);
   // const gender = "Women";
-  
+  const { isAuthenticated, user } = useAuth0();
+  const userEmail=user?.email
   useEffect(() => {
-    getWishList(userName,setWishListData);
+    getWishList(userEmail,setWishListData);
   }, []);
   const length=wishListData.length;
   return (
     <div
     style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
   >
-    {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-    {show.features && <Features />}
+    {show.user && <User />}
+    {show.features && <Features show={show} setShow={setShow} />}
     <div className="men">
     {
         length===0?<div style={{backgroundColor:"white",width:"97vw",height:"89vh", display:"flex",alignItems:"center", justifyContent:"center", fontSize:"8vh",color:"#FB6F90"}}> Nothing Wishlisted Yet !</div>:
@@ -32,7 +34,7 @@ function WishList({show,wishListData,setWishListData,setCartData, userName, user
             {wishListData.map((val) => {
               return (
                 <Grid item xs={2}>
-                  <WishListCard val={val} setCartData={setCartData} userName={userName}/>
+                  <WishListCard val={val} setCartData={setCartData} />
                   {/*  */}
                 </Grid>
               );

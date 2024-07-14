@@ -6,20 +6,20 @@ import "./features/styles/Men.css";
 import { Box, Grid } from "@mui/material";
 import MenCard from "./Cards/MenCard";
 import WomenCard from "./Cards/WomenCard";
-import { getWomenData } from "../../utils/AlldataUtils";
+import { getGenderData } from "../../utils/AlldataUtils";
 
-function Women({ show,setShow,wishListData,setWishListData, CartData,setCartData ,userName, userEmail, userAddress }) {
+function Women({ show,setShow,setWishListData,setCartData }) {
   const [WomenData, setWomenData] = useState([]);
   const gender = "Women";
   useEffect(() => {
-    getWomenData(gender, setWomenData);
+    getGenderData(gender, setWomenData);
   }, []);
   return (
     <div
       style={{ minHeight: "88vh", backgroundColor: "white", padding: "6px" }}
     >
-      {show.user && <User userName={userName}  userEmail={userEmail} userAddress={userAddress}/>}
-      {show.features && <Features />}
+      {show.user && <User />}
+      {show.features && <Features show={show} setShow={setShow} />}
       <div className="men">
         <div style={{backgroundColor:"white", overflowY:"scroll"}}>
           <Box sx={{ flexGrow: 1 }}>
@@ -27,7 +27,7 @@ function Women({ show,setShow,wishListData,setWishListData, CartData,setCartData
               {WomenData.map((val) => {
                 return (
                   <Grid item xs={2}>
-                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData} userName={userName}/>
+                    <WomenCard val={val} setWishListData={setWishListData} setCartData={setCartData}/>
                     {/*  */}
                   </Grid>
                 );

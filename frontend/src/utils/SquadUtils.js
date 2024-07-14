@@ -10,9 +10,9 @@ const getSquadData=(setSquadData)=>{
     })
 }
 
-const addSquadData= (content,userName,setContent,setSquadData)=>{
+const addSquadData= (content,userName,userEmail,setContent,setSquadData)=>{
     axios
-    .post(`${BaseUrl}/save`,{userName,content})
+    .post(`${BaseUrl}/save`,{userName,content,userEmail})
     .then((data)=>{
         console.log(data);
         setContent("");

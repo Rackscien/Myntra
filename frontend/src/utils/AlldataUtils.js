@@ -24,9 +24,9 @@ const getData=(setData)=>{
     })
 }
 
-const getMenData=(gender,setMenData)=>{
+const getGenderData=(gender,setMenData)=>{
     const maindata = [];
-    axios.get(`${BaseUrl}/${gender}`)
+    axios.post(`${BaseUrl}/search`,{gender})
     .then(({data})=>{
         // console.log('Data--->',data)
         for(let i=0;i<data.length;i++){
@@ -45,30 +45,10 @@ const getMenData=(gender,setMenData)=>{
         setMenData(maindata);
     })
 }
-const getWomenData=(gender,setMenData)=>{
+
+const getWatch = (gender,setWatch)=>{
     const maindata = [];
-    axios.get(`${BaseUrl}/${gender}`)
-    .then(({data})=>{
-        // console.log('Data--->',data)
-        for(let i=0;i<data.length;i++){
-            const img1 = data[i].img.toString().split(";");
-            console.log(img1[6]);
-            const obj = data[i];
-            obj.img0 = img1[img1.length-1];
-            obj.img1 = img1[0];
-            obj.img2 = img1[1];
-            obj.img3 = img1[2];
-            obj.img4 = img1[3];
-            obj.img5 = img1[4];
-            obj.img6 = img1[5];
-            maindata.push(obj);
-        }
-        setMenData(maindata);
-    })
-}
-const getWatch = (watch,setWatch)=>{
-    const maindata = [];
-    axios.get(`${BaseUrl}/${watch}`)
+    axios.post(`${BaseUrl}/search`,{gender})
     .then(({data})=>{
         // console.log('Data--->',data)
         if(data.length>6){
@@ -103,9 +83,9 @@ const getWatch = (watch,setWatch)=>{
         setWatch(maindata);
     })
 }
-const getAnyData=(input,setSearchData,setInput)=>{
+const getAnyData=(gender,setSearchData,setInput)=>{
     const maindata = [];
-    axios.get(`${BaseUrl}/${input}`)
+    axios.post(`${BaseUrl}/search`,{gender})
     .then(({data})=>{
         // console.log('Data--->',data)
         for(let i=0;i<data.length;i++){
@@ -126,4 +106,4 @@ const getAnyData=(input,setSearchData,setInput)=>{
         setInput("");
     })
 }
-export {getData, getMenData,getWomenData,getWatch,getAnyData}
+export {getData, getGenderData,getWatch,getAnyData}

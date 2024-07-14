@@ -4,7 +4,7 @@ const { getWishListData, addWishListData, deleteWishListData } = require('../con
 const router = Router();
 
 
-router.get(`/`,getWishListData);
+router.post(`/`,getWishListData);
 router.post('/save',addWishListData);
 router.post('/delete', deleteWishListData );
 
