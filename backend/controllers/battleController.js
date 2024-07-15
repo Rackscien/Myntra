@@ -35,13 +35,23 @@ module.exports.deleteContent = async (req,res) => {
 }
 
 module.exports.updateVote = async (req,res)=>{
-    const {id}= req.params.id;
+    // const {id}= req.params.id;
     // const {vote} = req.body;
+
+    const id= req.params.id;
+    const {vote} = req.body;
+
+    // BattleMOdel
+    // .findByIdAndUpdate(id,{$inc:{"vote":+1}})
+    // .then(()=>{
+    //     // const battle = require('../models/BattleModel');
+    //    res.send("Updated")
+    // })
     BattleMOdel
-    .findByIdAndUpdate(id,{$inc:{"vote":+1}})
-    .then(()=>{
-        // const battle = require('../models/BattleModel');
-       res.send("Updated")
+    .findByIdAndUpdate(id,{vote})
+    .then((data)=>{
+        console.log(data);
+        res.send("Updated Successfully....");
     })
     .catch((err)=> console.log(err))
 

@@ -23,7 +23,7 @@ const Style_Squads = ({ show,setShow }) => {
       {show.user && <User />}
       {show.features && <Features show={show} setShow={setShow} />}
       <div
-        style={{
+        style={{ 
           marginTop: "0vh",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
