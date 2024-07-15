@@ -4,7 +4,7 @@ const { getSquadData, addSqadData } = require('../controllers/SquadController');
 const router = Router();
 
 
-router.get(`/`,getSquadData);
+router.post(`/`,getSquadData);
 router.post('/save',addSqadData);
 // router.post('/delete', deleteWishListData );
 

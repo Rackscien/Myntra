@@ -2,16 +2,17 @@ const squadSchema=require('../models/squadModel')
 
 module.exports.getSquadData= async(req,res)=>{
     // const theme = req.params.theme;
-    const data = await squadSchema.find()
+    const {Fashion} = req.body;
+    const data = await squadSchema.find({Fashion})
     res.send(data)
 
 }
 
 module.exports.addSqadData= async(req,res)=>{
-    const {userName,content,userEmail} = req.body;
+    const {userName,content,userEmail,Fashion} = req.body;
     
     squadSchema
-    .create({userName,content,userEmail})
+    .create({userName,content,userEmail,Fashion})
     .then((data)=>{
         console.log("Added Successfully...");
         console.log(data);

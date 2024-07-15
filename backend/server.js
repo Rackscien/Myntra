@@ -13,6 +13,7 @@ const wishList = require('./routes/WishlistRoutes.js')
 const cart = require('./routes/cardRoutes.js')
 const squad=require(`./routes/squadRoute.js`)
 const diary=require(`./routes/DiaryRoutes.js`)
+const squadGroup=require(`./routes/SquadGroupRoutes.js`)
 
 
 app.use(express.json({limit:'25mb'}));
@@ -31,6 +32,7 @@ app.use('/wishList',wishList);
 app.use('/cart',cart);
 app.use('/squad',squad);
 app.use('/diary',diary);
+app.use('/squadGroup',squadGroup);
 
 const PORT = process.env.port || 200;
 mongoose

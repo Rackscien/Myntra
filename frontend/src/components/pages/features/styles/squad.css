@@ -1,24 +1,26 @@
 .squad{
-    height: 89vh;
-    background-color: pink;
-    width: 70vw;
-    border-radius: 5px;
+    width: 77vw;
+    background-color: white;
+    height:85vh ;
+    /* border-radius: 5px; */
+    margin-left: 1px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 5px 0;
 }
 
 .squad-text{
-    height: 80vh;
-    width: 69vw;
-    background-color: white;
+    height: 78vh;
+    width: 75vw;
+    /* background-color: pink; */
     overflow-y: scroll;
 }
 .squad-input{
     height: 6vh;
-    width: 69vw;
-    background-color: white;
+    width: 73vw;
+    /* background-color: pink; */
     display: flex;
     align-items: center;
     justify-content: center;

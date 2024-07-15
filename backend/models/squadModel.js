@@ -13,6 +13,10 @@ const squadSchema = new mongoose.Schema({
     userEmail:{
         type:String,
         require: true,
+    },
+    Fashion:{
+        type:String,
+        require: true,
     }
    
 
