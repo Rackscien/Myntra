@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/documentary"
+const BaseUrl="https://myntra-svcc.onrender.com/documentary"
 
 const getDocumentaries=(setDocumentaries)=>{
     // console.log(`${theme}`);

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/quiz"
+const BaseUrl="https://myntra-svcc.onrender.com/quiz"
 
 const getQuiz=(setAllQuiz)=>{
     

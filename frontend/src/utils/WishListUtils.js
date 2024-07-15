@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/wishList"
+const BaseUrl="https://myntra-svcc.onrender.com/wishList"
 
 const getWishList=(userEmail,setWishListData)=>{
     // console.log(`${theme}`);

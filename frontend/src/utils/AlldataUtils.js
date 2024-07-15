@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/data"
+const BaseUrl="https://myntra-svcc.onrender.com/data"
 
 const getData=(setData)=>{
     // console.log(`${theme}`);

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/squad"
+const BaseUrl="https://myntra-svcc.onrender.com/squad"
 
 const getSquadData=(selectedGroup,setSquadData)=>{
     // console.log(`${theme}`);

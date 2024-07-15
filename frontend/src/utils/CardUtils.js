@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/cart"
+const BaseUrl="https://myntra-svcc.onrender.com/cart"
 
 const getCart=(userEmail, setCartData)=>{
     // console.log(`${theme}`);

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BaseUrl="http://localhost:200/diary"
+const BaseUrl="https://myntra-svcc.onrender.com/diary"
 
 const getDiaryData=(userEmail,setDiaryData)=>{
     // console.log(`${theme}`);
